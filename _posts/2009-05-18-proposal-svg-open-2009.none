@@ -1,0 +1,82 @@
+---
+layout: post
+title: Proposal for SVG Open 2009
+date: '2009-05-18T09:46:38+00:00'
+
+---
+<p>The <a href="http://www.svgopen.org/2009/">SVG Open 2009</a> is in October at Google's campus in California. I recently submitted my proposal for a course on writing SVG through Javascript and the Raphael Javascript Library. Below is my proposal. Let's hope it is approved and I am able to continue work in SVG.</p>
+
+
+
+<p>I am proposing to teach a course about building an interactive SVG module on the web through the use of the Raphael Javascript Library. From start to finish, the course will walk attendees through the process of creating an interactive widget, with a number of features ranging in complexity from basic layout to event-driven interaction. The widget will be a moderately complex application consisting of parts SVG, Javascript, jQuery, and HTML. While Javascript experience is expected, it is not necessary, considering the syntax of Javascript in this capacity is not far different than many other languages.</p>
+
+<p>The widget, which will be used to demonstrate a number of techniques in creating both interactive and layered elements in SVG, is a "People Connection" module which shows a graph of how various people are connected to each other. See Figure 1 and Figure 2 for illustrations, and see http://www.daylife.com/topic/Barack_Obama/beta#title=Connections for a demonstration.</p>
+
+<p>The 150 minute course will consist of 3 parts, with questions taken throughout:
+</p><ul>
+
+
+
+
+<li>Introduction to Raphael (35 min)
+<ul>
+
+
+
+
+<li>5 minutes: Introduction and Overview of the People Connection widget</li>
+<li>10 minutes: Looking at the Raphael JS Library's methods and documentation</li>
+<li>10 minutes: Setting up data for the module to be used in drawing</li>
+<li>10 minutes: Loading data into Raphael</li>
+</ul>
+</li>
+<li>Drawing the widget (45 min)
+<ul>
+
+
+
+
+<li>10 minutes: Images</li>
+<li>15 minutes: Shapes</li>
+<li>20 minutes: Lines, straight and curved (quadratic and bicubic)</li>
+</ul>
+</li>
+<li>Interaction model (60 min)
+<ul>
+
+
+
+
+<li>20 minutes: Handling user/triggered events</li>
+<li>15 minutes: Animation</li>
+<li>25 minutes: Interacting with the DOM and jQuery</li>
+</ul>
+</li>
+</ul>
+<p></p>
+
+<p>There is a time buffer built into each part, and if there is extra time, I will be prepared to discuss:
+</p><ul>
+
+
+
+
+<li>Raphael versus other SVG/Javascript libraries</li>
+<li>Other projects built on Raphael</li>
+<li>Browser compatibility with Raphael</li>
+</ul>
+<p></p>
+
+<p>For each section of the course, I plan to discuss:
+</p><ul>
+
+
+
+
+<li>Implementation and coding conventions</li>
+<li>Potential pitfalls with certain techniques (browser incompatibilities, misconceptions, and common mistakes)</li>
+<li>Building the widget by coding in real-time (and not using blobs of code already written).</li>
+</ul>
+<p></p>
+
+<p>The flow of this walk-through course will be aligned with the building of the People Connection widget, where I will start with a empty file and progress over each step used in creating the overall effect and feel of the finished widget. Each piece of the widget puzzle will be complemented with a demonstration of the incremental improvement. At the end of the course, a complete widget, with all of its pieces, will be fully functional and fully explained.</p>

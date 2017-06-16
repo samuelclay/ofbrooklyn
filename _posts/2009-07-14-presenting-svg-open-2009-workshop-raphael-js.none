@@ -1,0 +1,98 @@
+---
+layout: post
+title: 'Presenting at SVG Open 2009: Workshop on Raphaël JS'
+date: '2009-07-14T09:44:21+00:00'
+
+---
+<p><span>We were accepted! Here is our finished abstract, also available on the SVG Open 2009 workshop page: <a href="http://www.svgopen.org/2009/registration.php?section=workshops">http://www.svgopen.org/2009/registration.php?section=workshops</a>.</span></p><p><span>Dmitry Baranovskiy - <a href="http://dmitry.baranovskiy.com">http://dmitry.baranovskiy.com</a> - dmitry@baranovskiy.com
+<br>Samuel Clay - <a href="http://www.ofbrooklyn.com">http://www.ofbrooklyn.com</a> - samuel@ofbrooklyn.com</span></p>
+<p>The
+power of web browsers has reached the point when it is easy to use
+native vector graphics without any 3rd party plugins and installs. In
+this session, we will discover how to build rich graphics in your web
+app using Raphal (http://raphaeljs.com/) JavaScript vector library,
+the features Raphal provides, and walk through how to apply these
+features into a fully built module.</p>
+<p>This
+course will cover a number of features ranging in complexity from basic
+layout to event-driven interaction. The module will be a moderately
+complex application consisting of parts SVG, Javascript, jQuery, and
+HTML. While Javascript experience is expected, it is not necessary,
+considering the syntax of Javascript in this capacity is not far
+different than many other languages.</p>
+<p>The
+module, which will be used to demonstrate a number of techniques in
+creating both interactive and layered elements in SVG, will be
+sufficiently advanced as to cover many topics, but so in-depth that it
+cannot be built entirely from scratch in the time allotted for the
+course--including time used for demonstrating Raphal.</p>
+<p>The 150 minute course will consist of 3 parts, with questions taken throughout: </p>
+<ul>
+
+
+
+
+<li>Introduction to Raphael (35 min)
+<ul>
+
+
+
+
+<li>5 minutes: Introduction and Overview of the People Connection widget </li>
+<li>10 minutes: Looking at the Raphael JS Library's methods and documentation </li>
+<li>10 minutes: Setting up data for the module to be used in drawing </li>
+<li>10 minutes: Loading data into Raphael</li>
+</ul>
+</li>
+<li>Drawing the widget (45 min) 
+<ul>
+
+
+
+
+<li>10 minutes: Images </li>
+<li>15 minutes: Shapes </li>
+<li>20 minutes: Lines, straight and curved (quadratic and bicubic) </li>
+</ul>
+</li>
+<li>Interaction model (60 min) 
+<ul>
+
+
+
+
+<li>20 minutes: Handling user/triggered events </li>
+<li>15 minutes: Animation </li>
+<li>25 minutes: Interacting with the DOM and jQuery </li>
+</ul>
+</li>
+</ul>
+<p>There is a time buffer built into each part, and if there is extra time, we will be prepared to discuss: </p>
+<ul>
+
+
+
+
+<li>Raphael versus other SVG/Javascript libraries </li>
+<li>Other projects built on Raphael </li>
+<li>Browser compatibility with Raphael </li>
+</ul>
+<p>For each section of the course, we plan to discuss: </p>
+<ul>
+
+
+
+
+<li>Implementation and coding conventions </li>
+<li>Potential pitfalls with certain techniques (browser incompatibilities, misconceptions, and common mistakes) </li>
+<li>Building the widget by coding in real-time (and not using blobs of code already written). </li>
+</ul>
+<p>The
+flow of this walk-through course will be aligned with the building of
+the module, where we will start with a empty file and progress over
+each step used in creating the overall effect and feel of the finished
+widget. Each piece of the widget puzzle will be complemented with a
+demonstration of the incremental improvement. At the end of the course,
+a complete module, with all of its pieces, will be fully functional and
+fully explained. Participants will also have all of these Raphal
+resources to use in their own SVG projects.</p>

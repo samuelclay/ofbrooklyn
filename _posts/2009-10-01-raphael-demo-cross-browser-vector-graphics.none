@@ -1,0 +1,301 @@
+---
+layout: post
+title: Raphaël Demo - Cross Browser Vector Graphics - Topic Connections Graph
+date: '2009-10-01T09:40:04+00:00'
+
+---
+<p>SVG, an open, standardized vector graphics markup language is now supported on 30% of all web browsers. The other 70% of browsers (specifically, Internet Explorer), support VML, a close cousin of SVG. If you write both SVG and VML, you can provide rich, interactive vector graphics > 99% of all browsers.</p>
+<p><a href="http://raphaeljs.com">Rapha&euml;l JavaScript Library</a> does all the heavy lifting for the developer. Write your circles, paths, animations, and interactions (events, mouseovers, clicks) in Rapha&euml;l, and it will write compatible SVG and VML that works almost everywhere. I have contributed to Rapha&euml;l and am currently presenting a paper and a workshop on Rapha&euml;l at <a href="http://www.svgopen.com/2009">SVG Open 2009</a> at Google HQ in Mountain View, California.</p>
+<p>I wrote this demo for <a href="http://www.daylife.com">Daylife</a>, but this demo uses a number of features in Rapha&euml;l, showcasing a number of features that can be used to make interactive graphics that are unlike anything else natively supported by almost all web browsers. This means no plug-ins or installs. No Flash. Just what is already built into every web browser.</p>
+
+<h3>Demo - Topic Connections Graph</h3>
+
+    <style>
+        .SO-module .SO-name {
+            display:block;
+            font-size: 10px;
+            line-height: 11px;
+            margin: 5px 0;
+            position: absolute;
+            text-align: center;
+            visibility: hidden;
+            width: 80px;
+            color: #416799;
+            font-family: "Lucida Grande";
+        }
+
+        .SO-module a {
+            text-decoration: none;
+            background: none;
+        }
+
+        .SO-active a {
+            text-decoration: underline;
+        }
+
+        .SO-module ol li {
+            list-style: none !important;
+        }
+
+        .SO-module {
+            margin: 20px;
+            position: relative;
+        }
+    </style>
+    
+    
+<div class="SO-module">
+
+    <div id="SO-connections-graph-wrapper">
+        <div id="connections_graph_186817" class="SO-connections-graph"></div>
+
+
+        <ol class="SO-topics">
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/White_House">White House</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Republican_Party">U.S. Republican Party</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Democratic_Party">U.S. Democratic Party</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Congress">U.S. Congress</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/George_W._Bush">George W. Bush</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Senate">U.S. Senate</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/Economic_Recession">Economic Recession</a>
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+    var images = [
+        {
+            'img': "/media/img/svg_demo/whitehouse.jpg",
+            'text': "White House",
+            'link': "http://beta.daylife.com/topic/White_House",
+            's': "large"
+        },		                    			                            {
+            'img': "/media/img/svg_demo/repub.jpg",
+            'text': "U.S. Republican Party",
+            'link': "http://beta.daylife.com/topic/U.S._Republican_Party",
+            's': "large"
+        },		                    			                            {
+            'img': "/media/img/svg_demo/demo.jpg",
+            'text': "U.S. Democratic Party",
+            'link': "http://beta.daylife.com/topic/U.S._Democratic_Party",
+            's': "large"
+        },		                    			                            {
+            'img': "/media/img/svg_demo/congress.jpg",
+            'text': "U.S. Congress",
+            'link': "http://beta.daylife.com/topic/U.S._Congress",
+            's': "medium"
+        },		                    			                            {
+            'img': "/media/img/svg_demo/bush.jpg",
+            'text': "George W. Bush",
+            'link': "http://beta.daylife.com/topic/George_W._Bush",
+            's': "medium"
+        },		                    			                            {
+            'img': "/media/img/svg_demo/senate.jpg",
+            'text': "U.S. Senate",
+            'link': "http://beta.daylife.com/topic/U.S._Senate",
+            's': "small"
+        },		                    			                            {
+            'img': "/media/img/svg_demo/econ.jpg",
+            'text': "Economic Recession",
+            'link': "http://beta.daylife.com/topic/Economic_Recession",
+            's': "small"
+        }
+    ];
+
+    var topic_image = {
+        'img': "/media/img/svg_demo/obama.jpg",
+        's': 'xlarge'
+    };
+
+    var center_x = 125;
+    var center_y = 125;
+    var offset_x = 45;
+    var offset_y = 45;
+    var $graph = $("#connections_graph_186817")[0];
+    var graph_x = 340;
+    var graph_y = 340;
+
+    var sizes = {
+        'small': 35,
+        'medium': 55,
+        'large': 75,
+        'xlarge': 100
+    };
+
+    var topic_graph = new TopicConnectionGraph($graph, graph_x, graph_y, center_x, center_y, offset_x, offset_y, sizes);
+    topic_graph.runner(images, topic_image);
+
+</script>
+
+<h3>Code</h3>
+
+<p>1) Download <a href="/media/js/jquery.topicconnections.js">jquery.topicconections.js</a></p>
+
+<p>2) This code should go into your &lt;style&gt;:</p>
+
+<pre><code class="css">
+.SO-module .SO-name {
+    display: block;
+    font-size: 10px;
+    line-height: 11px;
+    margin: 5px 0;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+    width: 80px;
+    color: #416799;
+    font-family: "Lucida Grande";
+}
+
+.SO-module a {
+    text-decoration: none;
+    background: none;
+}
+
+.SO-active a {
+    text-decoration: underline;
+}
+
+.SO-module ol li {
+    list-style: none !important;
+}
+
+.SO-module {
+    margin: 20px;
+    position: relative;
+}
+</code></pre>
+
+<p>3) Include these scripts in your &lt;head&gt;:</p>
+
+<pre><code class="html"><xmp>
+<script src="http://raphaeljs.com/raphael.js" 
+        type="text/javascript" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" 
+        type="text/javascript" charset="utf-8"></script>    
+<script src="/scripts/jquery.topicconnections.js" 
+        type="text/javascript" charset="utf-8"></script>
+</xmp></code></pre>
+    
+    <p>4) This code goes inline:</p>
+    
+<pre><code class="html"><xmp>
+<div class="SO-module">
+    <div id="SO-connections-graph-wrapper">
+        <div id="connections_graph_186817" class="SO-connections-graph"></div>
+        <ol class="SO-topics">
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/White_House">White House</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Republican_Party">U.S. Republican Party</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Democratic_Party">U.S. Democratic Party</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Congress">U.S. Congress</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/George_W._Bush">George W. Bush</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/U.S._Senate">U.S. Senate</a>
+            </li>
+            <li class="SO-topic">
+                <a class="SO-name" href="http://beta.daylife.com/topic/Economic_Recession">Economic Recession</a>
+            </li>
+        </ol>
+    </div>
+</div>
+</xmp></code></pre>
+
+<p>5) This JavaScript code also goes inline:</p>
+
+<pre><code class="javascript">
+var images = [
+    {
+        'img': "/media/img/svg_demo/whitehouse.jpg",
+        'text': "White House",
+        'link': "http://beta.daylife.com/topic/White_House",
+        's': "large"
+    },
+    {
+        'img': "/media/img/svg_demo/repub.jpg",
+        'text': "U.S. Republican Party",
+        'link': "http://beta.daylife.com/topic/U.S._Republican_Party",
+        's': "large"
+    },
+    {
+        'img': "/media/img/svg_demo/demo.jpg",
+        'text': "U.S. Democratic Party",
+        'link': "http://beta.daylife.com/topic/U.S._Democratic_Party",
+        's': "large"
+    },
+    {
+        'img': "/media/img/svg_demo/congress.jpg",
+        'text': "U.S. Congress",
+        'link': "http://beta.daylife.com/topic/U.S._Congress",
+        's': "medium"
+    },
+    {
+        'img': "/media/img/svg_demo/bush.jpg",
+        'text': "George W. Bush",
+        'link': "http://beta.daylife.com/topic/George_W._Bush",
+        's': "medium"
+    },
+    {
+        'img': "/media/img/svg_demo/senate.jpg",
+        'text': "U.S. Senate",
+        'link': "http://beta.daylife.com/topic/U.S._Senate",
+        's': "small"
+    },
+    {
+        'img': "/media/img/svg_demo/econ.jpg",
+        'text': "Economic Recession",
+        'link': "http://beta.daylife.com/topic/Economic_Recession",
+        's': "small"
+    }
+];
+
+var topic_image = {
+    'img': "/media/img/svg_demo/obama.jpg",
+    's': 'xlarge'
+};
+
+var center_x = 125;
+var center_y = 125;
+var offset_x = 45;
+var offset_y = 45;
+var $graph = $("#connections_graph_186817")[0];
+var graph_x = 340;
+var graph_y = 340;
+
+var sizes = {
+    'small': 35,
+    'medium': 55,
+    'large': 75,
+    'xlarge': 100
+};
+
+var topic_graph = new TopicConnectionGraph($graph, graph_x, graph_y, 
+                                           center_x, center_y,
+                                           offset_x, offset_y, sizes);
+topic_graph.runner(images, topic_image);
+</code></pre>

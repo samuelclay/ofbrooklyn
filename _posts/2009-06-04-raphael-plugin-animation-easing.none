@@ -1,0 +1,87 @@
+---
+layout: post
+title: 'Raphael Plugin: Animation Easing'
+date: '2009-06-04T09:45:27+00:00'
+
+---
+<p>
+ <a href="http://www.raphaeljs.com">Raphael</a> is a wonderful Javascript library, used for creating vector graphics, and interacting with SVG/VML elements through Javascript. Raphael allows the developer to interact with these elements through a number of complex animations.&nbsp;<br>
+</p><p>Until now, the only speed for an animation was a linear movement from one state to another. This plugin extends the animation of Raphael to allow for easing animations. Derived from jQuery Easing Plugin (version 1.3):&nbsp;<a href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a>.</p><div>
+ <p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.5em !important;">
+  <span style="font-weight: bold; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">NOTE:</span>&nbsp;As of June 2009, this plugin requires a forked version of RaphaelJS. You can download it here:&nbsp;<a href="https://github.com/conesus/raphael/tree">https://github.com/conesus/raphael/tree</a>. Hopefully, these forked changes will be merged with the master Raphael JS code.
+ </p>
+ <h2 style="margin-top: 1.5em !important; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0.5em !important; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em; border-top-width: 4px !important; border-right-width: 0px !important; border-bottom-width: 0px !important; border-left-width: 0px !important; border-style: initial !important; border-color: initial !important; font-size: 20px; border-top-style: solid !important; border-top-color: #e0e0e0 !important;">
+  Demo:
+ </h2>
+  <p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.5em !important;">
+  View a demo of animation easing techniques here:&nbsp;<a href="http://demos.daylife.com/samuel/svg_photo_flipper_prototype.xhtml">http://demos.daylife.com/samuel/svg_photo_flipper_prototype.xhtml</a>
+ </p>
+
+ <h2 style="margin-top: 1.5em !important; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0.5em !important; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em; border-top-width: 4px !important; border-right-width: 0px !important; border-bottom-width: 0px !important; border-left-width: 0px !important; border-style: initial !important; border-color: initial !important; font-size: 20px; border-top-style: solid !important; border-top-color: #e0e0e0 !important;">
+  To use:
+ </h2>
+ <ol style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 1.5em !important; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">
+  <li>Download raphael.easing.1.3.js from: <a href="http://github.com/conesus/raphael-easing/tree/master">http://github.com/conesus/raphael-easing/tree/master</a>.</li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">Include the&nbsp;raphael.easing.1.3.js&nbsp;file after your&nbsp;raphael.js&nbsp;file.
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">
+   <p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.5em !important;">
+    Specify the easing technique in the&nbsp;.animate()&nbsp;function, like so:
+   </p>
+   <p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.5em !important;">
+    Element.animate({"scale": [1.25, 1.25]}, 750, "easeOutCubic", callback);
+   </p>
+  </li>
+ </ol>
+
+
+ <h3 style="margin-top: 1em !important; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em; border-top-width: 0px !important; border-right-width: 0px !important; border-bottom-width: 0px !important; border-left-width: 0px !important; border-style: initial !important; border-color: initial !important;">
+  Available easing techniques:
+ </h3>
+ <ul style="margin-top: 0px !important; margin-right: 0px !important; margin-bottom: 0px !important; margin-left: 1.3em !important; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">linear
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInQuad
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutQuad
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutQuad
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInCubic
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutCubic
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutCubic
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInQuart
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutQuart
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutQuart
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInQuint
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutQuint
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutQuint
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInExpo
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutExpo
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutExpo
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInElastic
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutElastic
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutElastic
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInBounce
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeOutBounce
+  </li>
+  <li style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; line-height: 1.4em;">easeInOutBounce
+  </li>
+ </ul>
+</div>

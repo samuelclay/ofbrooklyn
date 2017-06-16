@@ -1,0 +1,63 @@
+.post ol,
+.post ul {
+    margin-left: 24px;
+}
+.post li {
+    color: inherit;
+    font-size: inherit;
+    list-style-position: outside;
+}
+.post ol li {
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+.post img,
+.post video {
+    margin: 24px auto;
+    border: 1px solid #303030;
+    display: block;
+    max-width: 100%;
+}
+.post img.small {
+    float: left;
+    margin-right: 24px;
+}
+.post img.no-border {
+    border: none;
+}
+.post h6 {
+    margin-top: -12px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.post-continuation {
+    font-weight: bold;
+}
+.sidebar {
+    line-height: 1.2em;
+}
+
+.sidebar .sidebar-about h1 {
+    font-size: 1.7rem;
+}
+
+.profile-photo {
+    margin: 0 auto;
+}
+
+@media (min-width: 48em) {
+    .profile-photo {
+        margin: 0;
+    }
+}
+
+pre {
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
+}
+
+figure.highlight {
+    margin: 0 0 1rem 0;
+}

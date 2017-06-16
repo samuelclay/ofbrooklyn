@@ -1,0 +1,58 @@
+---
+layout: post
+title: Syntax highlighting for Django using Pygments
+date: '2010-01-15T17:13:57+00:00'
+
+---
+<p>The wonderful django-mingus includes a few separate syntax highlighters, including one from django-sugar. However, the pygmentize template filter only works on &lt;code&gt; blocks and tries to guess the language.</p>
+
+<p>A better syntax would be to include the language in the class of the code block, like so:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">&quot;python&quot;</span><span class="nt">&gt;</span> 
+    <span class="kn">import</span> <span class="nn">this</span> 
+    <span class="k">print</span> <span class="p">[</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)]</span> 
+<span class="nt">&lt;/code&gt;</span> 
+</pre></div> 
+
+<p>You can use this template filter, which is adapted from the <a href="http://www.djangosnippets.org/snippets/25/">Pygments Rendering Template Filter</a> at Django Snippets.</p>
+<div class="highlight"><pre>
+<span class="kn">import</span> <span class="nn">re</span> 
+<span class="kn">import</span> <span class="nn">pygments</span> 
+<span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">template</span> 
+<span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">lexers</span> 
+<span class="kn">from</span> <span class="nn">pygments</span> <span class="kn">import</span> <span class="n">formatters</span> 
+ 
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span> 
+<span class="n">regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;&lt;code(.*?)&gt;(.*?)&lt;/code&gt;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span> 
+ 
+<span class="nd">@register.filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;pygmentize&#39;</span><span class="p">)</span> 
+<span class="k">def</span> <span class="nf">pygmentize</span><span class="p">(</span><span class="n">value</span><span class="p">):</span> 
+    <span class="n">last_end</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="n">to_return</span> <span class="o">=</span> <span class="s">&#39;&#39;</span> 
+    <span class="n">found</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">for</span> <span class="n">match_obj</span> <span class="ow">in</span> <span class="n">regex</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">value</span><span class="p">):</span> 
+        <span class="n">code_class</span> <span class="o">=</span> <span class="n">match_obj</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+        <span class="n">code_string</span> <span class="o">=</span> <span class="n">match_obj</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> 
+        <span class="k">if</span> <span class="n">code_class</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;class&#39;</span><span class="p">):</span> 
+            <span class="n">language</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">r&#39;&quot;|</span><span class="se">\&#39;</span><span class="s">&#39;</span><span class="p">,</span> <span class="n">code_class</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> 
+            <span class="n">lexer</span> <span class="o">=</span> <span class="n">lexers</span><span class="o">.</span><span class="n">get_lexer_by_name</span><span class="p">(</span><span class="n">language</span><span class="p">)</span> 
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="k">try</span><span class="p">:</span> 
+                <span class="n">lexer</span> <span class="o">=</span> <span class="n">lexers</span><span class="o">.</span><span class="n">guess_lexer</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">code_string</span><span class="p">))</span> 
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span> 
+                <span class="n">lexer</span> <span class="o">=</span> <span class="n">lexers</span><span class="o">.</span><span class="n">PythonLexer</span><span class="p">()</span> 
+        <span class="n">pygmented_string</span> <span class="o">=</span> <span class="n">pygments</span><span class="o">.</span><span class="n">highlight</span><span class="p">(</span><span class="n">code_string</span><span class="p">,</span> <span class="n">lexer</span><span class="p">,</span> <span class="n">formatters</span><span class="o">.</span><span class="n">HtmlFormatter</span><span class="p">())</span> 
+        <span class="n">to_return</span> <span class="o">=</span> <span class="n">to_return</span> <span class="o">+</span> <span class="n">value</span><span class="p">[</span><span class="n">last_end</span><span class="p">:</span><span class="n">match_obj</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span> <span class="o">+</span> <span class="n">pygmented_string</span> 
+        <span class="n">last_end</span> <span class="o">=</span> <span class="n">match_obj</span><span class="o">.</span><span class="n">end</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> 
+        <span class="n">found</span> <span class="o">=</span> <span class="n">found</span> <span class="o">+</span> <span class="mi">1</span> 
+    <span class="n">to_return</span> <span class="o">=</span> <span class="n">to_return</span> <span class="o">+</span> <span class="n">value</span><span class="p">[</span><span class="n">last_end</span><span class="p">:]</span> 
+    <span class="k">return</span> <span class="n">to_return</span> 
+</pre></div> 
+
+<p>This is a template filter, which can be applied like so:</p>
+
+<code class="html">
+{{ code|pygmentize }}
+</code>
+
+You can read more about custom tempalte filters at the Django Project: <a href="http://docs.djangoproject.com/en/dev/howto/custom-template-tags/#writing-custom-template-filters">Writing Custom Template Filters</a>.

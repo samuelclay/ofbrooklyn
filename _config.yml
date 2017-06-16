@@ -6,24 +6,31 @@ highlighter:      rogue
 permalink:        pretty
 
 # Setup
-title:            OfBrooklyn
+title:            OfBrooklyn.com
 tagline:          "Samuel Clay's collected writings"
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
+description:      ""
+
+url:              http://www.ofbrooklyn.com
 baseurl:          /
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Samuel Clay'
+  url:            https://www.samuelclay.com
 
 paginate:         5
+excerpt_separator: <!--more-->
+
+markdown:    kramdown
+highlighter: pygments
 
 # Custom vars
 version:          2.1.0
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/samuelclay/ofbrooklyn/
 
 gems:
   - jekyll-paginate
   - jekyll-gist
+  - pygments.rb
+  

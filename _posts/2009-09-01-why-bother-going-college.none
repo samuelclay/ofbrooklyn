@@ -1,0 +1,20 @@
+---
+layout: post
+title: Why Bother Going to College
+date: '2009-09-01T09:43:24+00:00'
+
+---
+<p><span style="font-style: italic;">In response to James Padolsey's <a href="http://james.padolsey.com/general/trying-to-learn-java/comment-page-1/#comment-16889">blog post</a> on his apprehension to studying Java before his first-year studying computer science.</span></p><p>University is unlike anything youve done, and unfortunately anything else youre going to do unless you really love the study of computer science. I recently graduated from university with a degree in Computer Engineering, taking roughly similar courses as a Comp Sci (except we also took harder classes related to engineering that were straight out of unrelated engineering disciplines, like thermodynamics, statics (bridges), and materials science).
+
+</p><p>Almost everybody enrolled in the computer science department started out years before school, programming in somethingusually web development (esp. Javascript, the bad parts). A healthy number of them drop out of the program and switch to math/physics/management or even art history. They drop comp sci not because they are dumb, or have a slower intake of the sheer volume of dense material fed to them. Its because they discover that the internals, things like how primitives are actually allocated in different ways in memory, sometimes even to your advantage to use the right one, are not as interesting as they had hoped. Low-level course material, such as transistor logic, VHDL, networking, operating systems (easily one of the most challenging and rewarded courses taught in computer science), and systems programming, are all above and beyond what most contractor/freelancers will face while they are busy earning 25% more than their comp sci cousins.
+
+</p><p>But the difference is worth a lot. Take a look at that one, systems programming. Here is a short description of whats taught:
+</p>
+<blockquote>EECS 337 Systems Programming - 4 credits
+Lexical analyzers; symbol tables and their searching; assemblers, one-pass and two-pass, conditional assembly, and macros; linkers and loaders; interpreters, pcodes, threaded codes; introduction to compilation, grammar, parsing, and code generation; preprocessors; text editors, line-oriented and screen-oriented; bootstrap loaders, ROM monitors, interrupts, and device drivers. Laboratory. Prereq: EECS 233 and EECS 281.</blockquote>
+
+<p>If you want to write code that does anything that involves automated decision making, the true back-end of great companies to work for or start, you need to actually study and learn about these low-levels to build better decision trees (data structures alone make it worthwhile) and neural networks. There are so many fascinating topics out there, and they are all more expressive than having to design web sites for clients.
+
+</p><p>I absolutely love the study of artificial intelligence, and am working on a project where the meat of the project is in the AI that feeds the site, but I dont write algorithms or architect systems for a living. I write Javascript code (and Python on the back-end serving up the front-end), designing a web app for publishers to create photo galleries. Its not quite the academic challenge I get on my project, but you also have to be very, very good at computer science to get recognized and to make big contributions, even to small companies (think startups).
+
+</p><p>Computer Science is a rich and engaging degree, and while it isnt for many who think it is, those who stick with it all 4 (to 5) years end up very happy. This is the golden age of software. Theres a lot of upheaval which will forge new empires, and I bet something as notable as the few winners of the California gold rush of the 19th century didnt even have the prestige that good engineers have. Think of all the famous and very wealthy nerds. Think about that when youre slogging through decimal floating-point arithmetics in binary by hand.</p>

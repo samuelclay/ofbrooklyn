@@ -9,13 +9,27 @@
       <p class="lead">{{ site.description }}</p>
     </div>
 
+    <p><a href="http://www.samuelclay.com"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Campeche%20Steps.jpg" width="220" height="180" class="profile-photo" /></a></p>
+
+    <p><b><a href="http://www.samuelclay.com">Samuel Clay</a></b> is the founder of <a href="http://www.newsblur.com">NewsBlur</a>, a personal RSS news reader for web, iOS, and Android. He is also the founder of <a href="https://turntouch.com">Turn Touch</a>, beautiful control for your smart home. <p>
+
+    <!-- <p><a href="https://turntouch.com"><img src="https://turntouch.com/static/images/media-kit/photos/Turn%20Touch-3259c.jpg" class="profile-photo" style="width: 100%"></a></p> -->
+
+    <!-- <p>He lives in San Francisco, California. In another life in New York, he worked at the New York Times on <a href="http://www.documentcloud.org">DocumentCloud</a>,  an open-source repository of primary source documents contributed by journalists.</p> -->
+
+    <!-- <p>You can read about his past and present projects at <a href="http://www.samuelclay.com">samuelclay.com</a>.</p> -->
+
+    <!-- <p>Follow <a href="http://twitter.com/samuelclay">@samuelclay</a> on Twitter.</p> -->
+
+
+    <!-- <p>You can email Samuel at <a href="mailto:samuel@ofbrooklyn.com">samuel@ofbrooklyn.com</a>. He loves receiving email from new people. Who doesn't?</p> -->
+
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+      <!-- <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a> -->
 
       {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
@@ -25,12 +39,8 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+      {% endcomment %}
 
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
-
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>

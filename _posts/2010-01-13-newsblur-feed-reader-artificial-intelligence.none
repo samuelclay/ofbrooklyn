@@ -1,0 +1,17 @@
+---
+layout: post
+title: 'NewsBlur: Feed Reader with Artificial Intelligence'
+date: '2010-01-13T09:48:34+00:00'
+
+---
+<div>Every two to three years I start a new project. Having recently completed the SunRayLab blog, I turned to another problem that I have been having since i started visiting blogs and other sites through the lens of my RSS feed reader, NetNewsWire. </div><br><div>I am starting a new project called NewsBlur. NewsBlur is an RSS feed reader with intelligence. <a href="http://www.newsblur.com">See NewsBlur in action</a>.</div><br><div>My problem is simple: I subscribe to a few dozen blogs. I do not want to read all of their many stories, yet my unread count keeps climbing. Some blogs post frequently while other blogs post once a month. I want a feed reader that easily trims the undesirable fat from my feeds. </div><br><div>This has been done in varying degrees before, but each implementation has been lacking for any number of reasons:</div><div><ol>
+
+
+<li>The reading interface was convulted, slow, difficult, too busy, or rough.</li>
+<li>The intelligence used to pare down my feeds to just what I want was either difficult to setup, hard to train, overly-burdensome, or even just plain stupid.</li>
+<li>Marking feeds and stories as typical of what I want in the future has never been done.</li>
+</ol>
+
+
+
+</div><div><span style="font-weight: bold;">I am solving this problem in a unique way. </span></div><br><div>The challenge in creating an interesting experience that is different from any other experience is what drives me to work on NewsBlur. I want a service that works for me. I expect that before I finish, I will already have abandoned my tried-and-true NetNewsWire (on both Mac OS and iPhone) in favor of NewsBlur.</div><br><div>I will use this blog space as a means to communicate advances in NewsBlur, as well as methodologies, practices, and thoughts behind the creation of NewsBlur. </div><br><div>My hope is that NewsBlur becomes part of a community that further enhances the news and blog reading experience for everybody.</div>
