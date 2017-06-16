@@ -27,12 +27,14 @@ The great news is that you can get the old-school Exposé back. The beta builds 
 
 #### Run the following commands in Terminal.app:
 
-    #!sh
-    sudo chown -R root ~/Desktop/Dock.app;
-    sudo chgrp -R wheel ~/Desktop/Dock.app;
-    sudo killall Dock && \
-    sudo mv /System/Library/CoreServices/Dock.app ~/Desktop/OldDock.app && \
-    sudo mv ~/Desktop/Dock.app /System/Library/CoreServices/
+{% highlight shell %}
+#!sh
+sudo chown -R root ~/Desktop/Dock.app;
+sudo chgrp -R wheel ~/Desktop/Dock.app;
+sudo killall Dock && \
+sudo mv /System/Library/CoreServices/Dock.app ~/Desktop/OldDock.app && \
+sudo mv ~/Desktop/Dock.app /System/Library/CoreServices/
+{% endhighlight %}
 
 Easy to do and indispensible now that you have it back. Hat-tip to [miknos at MacRumors](http://forums.macrumors.com/showthread.php?t=869611) for the original find.
 

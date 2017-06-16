@@ -5,16 +5,14 @@ date: '2014-01-02T06:00:00+00:00'
 
 ---
 <style>
-.rpi-article img {
-    border: 1px solid #303030;
-}
-.rpi-article .rpi-lcd {
+.rpi-lcd {
     margin: 12px 0;
 }
-.rpi-article .rpi-lcd img {
+.rpi-lcd img {
     width: 202px;
     height: 156px;
     margin-right: 16px;
+    border: none;
 }
 .rpi-image-float {
     float: right; 
@@ -22,11 +20,9 @@ date: '2014-01-02T06:00:00+00:00'
 }
 </style>
 
-<div class="rpi-article">
-
 Every hardware hacker has a start, and this one is mine. [My girlfriend](http://twitter.com/brittanymorgan) bought me a [Raspberry Pi](http://raspberrypi.org) for my birthday, and so I became determined to build something with it for her birthday two months later.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" width=640 style="border: 1px solid #303030; margin: 0 0 24px;">
+<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
 
 As you can see above, I built a photo frame that has a few interesting parts. For one, the software which runs the photo frame, which I explore below, keeps the photos fresh from Instagram and Flickr. It then displays a random photo for a configurable six seconds. Secondly, there is a motion detector, built using a PIR sensor, which only turns the monitor on when somebody walks by.
 
@@ -42,19 +38,19 @@ I chose to use a Raspberry Pi for its simple wifi integration so that photos cou
 
 Connecting the monitor was also trivial on a Raspberry Pi, where an Arduino, Maple, or Beagle Bone would require sourcing a connection between the monitor's composite input and an output from the device.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Raspberry%20Pi.jpg" width=640>
+<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Raspberry%20Pi.jpg">
 
 ###### [Raspberry Pi](http://www.adafruit.com/products/1344), $29 on Adafruit.
 
 Make note of the fact that you actually don't see any of my connections on the top of the board (pictured below). In the below photo, where the Raspberry Pi is flipped vertically to show off the electrical connections, the monitor's composite cable and the motion detecting PIR sensor's red wires are soldered underneath. 
 
-<p><img src="http://static.newsblur.com.s3.amazonaws.com/blog/Raspberry%20Pi%20Backside.jpg" width=640></p>
+<img src="http://static.newsblur.com.s3.amazonaws.com/blog/Raspberry%20Pi%20Backside.jpg">
 
 This way the photo frame looks cleaner. If I had connected the monitor using the yellow composite cable, it would have to be with a male-to-male composite adapter, since both the Raspberry Pi and the monitor have a male RCA connection. This would jut out about 2 inches below the device, resulting in a messy look for the frame.
 
 ### 3.5" LCD Monitor
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%203.5%20lcd.jpg" width=640>
+<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%203.5%20lcd.jpg">
 
 ###### [3.5" LCD Monitor](http://www.adafruit.com/products/913), $45 on Adafruit
 
@@ -87,10 +83,12 @@ There are a number of different sized LCD monitors:
     </tr>
 </table>
 
+<!--more-->
+
 ### 4GB SD Card with Raspbian (Raspberry Pi + Debian)
 
 <div class="rpi-image-float">
-    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20SD%20Card.jpg" width=200>
+    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20SD%20Card.jpg" width="200">
     <h6><a href="http://www.adafruit.com/products/1121">4GB SD Card</a>, $10 on Adafruit</h6>
 </div>
 
@@ -101,7 +99,7 @@ This tiny SD card comes pre-loaded with Raspbian. If you prefer to use your own 
 ### Miniature Wifi on USB
 
 <div class="rpi-image-float">
-    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Wifi.jpg" width=200>
+    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Wifi.jpg" width="200">
     <h6><a href="http://www.adafruit.com/products/814">USB Wifi</a>, $11 on Adafruit</h6>
 </div>
 
@@ -112,7 +110,7 @@ Unless you're planning to use an ugly ethernet cable, this tiny wifi USB device 
 ### Passive Infrared Motion Sensor
 
 <div class="rpi-image-float">
-    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20PIR.jpg" width=200>
+    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20PIR.jpg" width="200">
     <h6><a href="http://www.adafruit.com/products/189">PIR sensor</a>, $10 on Adafruit</h6>
 </div>
 
@@ -123,7 +121,7 @@ This is a simple and inexpensive component that is responsible for turning the m
 ### Soldering Iron
 
 <div class="rpi-image-float">
-    <img src="http://ecx.images-amazon.com/images/I/31NVnBvhZdL._SL500_AA300_.jpg" width=200>
+    <img src="http://ecx.images-amazon.com/images/I/31NVnBvhZdL._SL500_AA300_.jpg" width="200">
     <h6><a href="http://www.amazon.com/Aoyue-937-Digital-Soldering-Station/dp/B000I30QBW">Aoyue 937+</a>, $60 on Amazon</h6>
 </div>
 
@@ -151,46 +149,50 @@ You'll need to [register your Flickr API app](http://www.flickr.com/services/app
 
 There are two Python library dependencies for this code:
 
-    pip install flickrapi
-    pip install requests
+{% highlight shell %}
+pip install flickrapi
+pip install requests
+{% endhighlight %}
 
 Once those are installed, save this script as `download_flickr.py`
     
-    #!/usr/bin/env python
+{% highlight python %}
+#!/usr/bin/env python
 
-    import flickrapi
-    import requests
+import flickrapi
+import requests
 
-    FLICKR_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-    USER_ID = "25704617@N04"
+FLICKR_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+USER_ID = "25704617@N04"
 
-    def make_url(photo):
-        # url_template = "http://farm{farm-id}.staticflickr.com/
-        #                 {server-id}/{id}_{secret}_[mstzb].jpg"
-        photo['filename'] = "%(id)s_%(secret)s_z.jpg" % photo
-        url = ("http://farm%(farm)s.staticflickr.com/%(server)s/%(filename)s" 
-               % photo)
-        return url, photo['filename']
+def make_url(photo):
+    # url_template = "http://farm{farm-id}.staticflickr.com/
+    #                 {server-id}/{id}_{secret}_[mstzb].jpg"
+    photo['filename'] = "%(id)s_%(secret)s_z.jpg" % photo
+    url = ("http://farm%(farm)s.staticflickr.com/%(server)s/%(filename)s" 
+           % photo)
+    return url, photo['filename']
 
-    def main():
-        print " ---> Requesting photos..."
-        flickr = flickrapi.FlickrAPI(FLICKR_KEY)
-        photos = flickr.walk(user_id=USER_ID)
-        for photo in photos:
-            url, filename = make_url(photo.__dict__['attrib'])
-            path = '/home/pi/photoframe/flickr/%s' % filename
-            try:
-                image_file = open(path)
-                print " ---> Already have %s" % url
-            except IOError:
-                print " ---> Downloading %s" % url
-                r = requests.get(url)      
-                image_file = open(path, 'w')
-                image_file.write(r.content)
-                image_file.close()
+def main():
+    print " ---> Requesting photos..."
+    flickr = flickrapi.FlickrAPI(FLICKR_KEY)
+    photos = flickr.walk(user_id=USER_ID)
+    for photo in photos:
+        url, filename = make_url(photo.__dict__['attrib'])
+        path = '/home/pi/photoframe/flickr/%s' % filename
+        try:
+            image_file = open(path)
+            print " ---> Already have %s" % url
+        except IOError:
+            print " ---> Downloading %s" % url
+            r = requests.get(url)      
+            image_file = open(path, 'w')
+            image_file.write(r.content)
+            image_file.close()
 
-    if __name__ == '__main__':
-        main()
+if __name__ == '__main__':
+    main()
+{% endhighlight %}
 
 ### Downloading extra photos from Flickr by tag name
 
@@ -198,23 +200,29 @@ Part of the fun of this photo frame is that not only do all of my photos get sho
 
 Save the following command as `download_koalas.sh` or whatever you like as a tag.
 
-    FLICKR_TAG=koala && \
-    wget 'http://api.flickr.com/services/feeds/photos_public.gne?tags=$FLICKR_TAG' -O- \
-    | grep -Po 'http://[^.]+\.staticflickr[^"]+(_b.jpg|_z.jpg)' \
-    | wget -P /home/pi/photoframe/$FLICKR_TAG -nc -i- 
+{% highlight shell %}
+FLICKR_TAG=koala && \
+wget 'http://api.flickr.com/services/feeds/photos_public.gne?tags=$FLICKR_TAG' -O- \
+| grep -Po 'http://[^.]+\.staticflickr[^"]+(_b.jpg|_z.jpg)' \
+| wget -P /home/pi/photoframe/$FLICKR_TAG -nc -i- 
+{% endhighlight %}
 
 ### Automatic downloading of new photos
 
 In order to have the photos refreshed, you'll need to have them download in the background. Add these two lines to your crontab with `crontab -e` if you're using both the Flickr photo downloader and the Flickr tag downloader.
 
-    0 * * * * python /home/pi/photoframe/download_flickr.py
-    30 * * * * /home/pi/photoframe/download_koalas.sh
+{% highlight shell %}
+0 * * * * python /home/pi/photoframe/download_flickr.py
+30 * * * * /home/pi/photoframe/download_koalas.sh
+{% endhighlight %}
 
 ### Slideshow
 
 Now that we have the photos downloaded and refreshed at a regular interval, we need to get the slideshow running. We'll use a simple app called the Linux framebuffer imageviewer. Stick this command into a `slideshow.sh`.
 
-    fbi -noverbose -m 640x480 -a -u -t 6 /home/pi/art/**/*
+{% highlight shell %}
+fbi -noverbose -m 640x480 -a -u -t 6 /home/pi/art/**/*
+{% endhighlight %}
 
 The option for time is set to 6 seconds, and it uses autozoom to automagically pick a reasonable zoom factor when loading images. The `-u` option randomizes the order. 
 
@@ -224,75 +232,81 @@ The slideshow is now running at fullscreen with a randomized assortment of Flick
 
 Save this file as `pir.py`.
 
-    #!/usr/bin/env python
-    
-    import sys
-    import time
-    import RPi.GPIO as io
-    import subprocess
+{% highlight python %}
+#!/usr/bin/env python
 
-    io.setmode(io.BCM)
-    SHUTOFF_DELAY = 60 # seconds
-    PIR_PIN = 25       # 22 on the board
-    LED_PIN = 16
+import sys
+import time
+import RPi.GPIO as io
+import subprocess
 
-    def main():
-        io.setup(PIR_PIN, io.IN)
-        io.setup(LED_PIN, io.OUT)
-        turned_off = False
-        last_motion_time = time.time()
+io.setmode(io.BCM)
+SHUTOFF_DELAY = 60 # seconds
+PIR_PIN = 25       # 22 on the board
+LED_PIN = 16
 
-        while True:
-            if io.input(PIR_PIN):
-                last_motion_time = time.time()
-                io.output(LED_PIN, io.LOW)
-                print ".",
-                sys.stdout.flush()
-                if turned_off:
-                    turned_off = False
-                    turn_on()
-            else:
-                if not turned_off and time.time() > (last_motion_time + 
-                                                     SHUTOFF_DELAY):
-                    turned_off = True
-                    turn_off()
-                if not turned_off and time.time() > (last_motion_time + 1):
-                    io.output(LED_PIN, io.HIGH)
-            time.sleep(.1)
+def main():
+    io.setup(PIR_PIN, io.IN)
+    io.setup(LED_PIN, io.OUT)
+    turned_off = False
+    last_motion_time = time.time()
 
-    def turn_on():
-        subprocess.call("sh /home/pi/photoframe/monitor_on.sh", shell=True)
+    while True:
+        if io.input(PIR_PIN):
+            last_motion_time = time.time()
+            io.output(LED_PIN, io.LOW)
+            print ".",
+            sys.stdout.flush()
+            if turned_off:
+                turned_off = False
+                turn_on()
+        else:
+            if not turned_off and time.time() > (last_motion_time + 
+                                                 SHUTOFF_DELAY):
+                turned_off = True
+                turn_off()
+            if not turned_off and time.time() > (last_motion_time + 1):
+                io.output(LED_PIN, io.HIGH)
+        time.sleep(.1)
 
-    def turn_off():
-        subprocess.call("sh /home/pi/photoframe/monitor_off.sh", shell=True)
+def turn_on():
+    subprocess.call("sh /home/pi/photoframe/monitor_on.sh", shell=True)
 
-    if __name__ == '__main__':
-        try:
-            main()
-        except KeyboardInterrupt:
-            io.cleanup()
+def turn_off():
+    subprocess.call("sh /home/pi/photoframe/monitor_off.sh", shell=True)
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        io.cleanup()
+{% endhighlight %}
 
 ### Turning the monitor on and off
 
 There are two ways to turn the monitor on and off. Use the `tvservice` command to turn off the monitor port.
 
-    pi@raspberrypi ~/photoframe $ chmod 0744 monitor_off.sh 
-    pi@raspberrypi ~/photoframe $ cat monitor_off.sh 
-    tvservice -o
-    
-    pi@raspberrypi ~/photoframe $ chmod 0744 monitor_on.sh 
-    pi@raspberrypi ~/photoframe $ cat monitor_on.sh 
-    tvservice -c "PAL 4:3" && fbset -depth 8 && fbset -depth 16
+{% highlight shell %}
+pi@raspberrypi ~/photoframe $ chmod 0744 monitor_off.sh 
+pi@raspberrypi ~/photoframe $ cat monitor_off.sh 
+tvservice -o
+
+pi@raspberrypi ~/photoframe $ chmod 0744 monitor_on.sh 
+pi@raspberrypi ~/photoframe $ cat monitor_on.sh 
+tvservice -c "PAL 4:3" && fbset -depth 8 && fbset -depth 16
+{% endhighlight %}
 
 This method actually turns off the port, which works great except when you're connected to an HDMI monitor and it shuts off when the port is turned off. When you walk into the room, the port is turned back on but the monitor is off, so it doesn't come right back up. In this case, simply switch virtual terminals to blank out the screen using the `chvt` command.
 
-    pi@raspberrypi ~/photoframe $ chmod 0744 monitor_off.sh 
-    pi@raspberrypi ~/photoframe $ cat monitor_off.sh 
-    chvt 2
-    
-    pi@raspberrypi ~/photoframe $ chmod 0744 monitor_on.sh 
-    pi@raspberrypi ~/photoframe $ cat monitor_on.sh 
-    chvt 7
+{% highlight shell %}
+pi@raspberrypi ~/photoframe $ chmod 0744 monitor_off.sh 
+pi@raspberrypi ~/photoframe $ cat monitor_off.sh 
+chvt 2
+
+pi@raspberrypi ~/photoframe $ chmod 0744 monitor_on.sh 
+pi@raspberrypi ~/photoframe $ cat monitor_on.sh 
+chvt 7
+{% endhighlight %}
 
 ### Fixing the monitor edges
 
@@ -300,18 +314,20 @@ By default, the image won't stretch to the edges of your monitor without cajolin
 
 Here's the before photo:
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/blog/Raspberry%20Pi%20Photo%20Frame.jpg" width=640 style="border: 1px solid #303030; margin: 0 0 24px;">
+<img src="http://static.newsblur.com.s3.amazonaws.com/blog/Raspberry%20Pi%20Photo%20Frame.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
 
 And here's with margin correction on the monitor: 
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" width=640 style="border: 1px solid #303030; margin: 0 0 24px;">
+<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
 
 To fix this, take a look at using <a href="http://elinux.org/RPiconfig">RPiconfig</a>. All you need to do is edit `/boot/config.txt` directly on the Raspberry Pi. The values you need to set are:
 
-    overscan_left=-6    # number of pixels to skip on left
-    overscan_right=-6   # number of pixels to skip on right
-    overscan_top=24     # number of pixels to skip on top
-    overscan_bottom=24  # number of pixels to skip on bottom
+{% highlight python %}
+overscan_left=-6    # number of pixels to skip on left
+overscan_right=-6   # number of pixels to skip on right
+overscan_top=24     # number of pixels to skip on top
+overscan_bottom=24  # number of pixels to skip on bottom
+{% endhighlight %}
 
 These are my values, but every monitor is different. In order to figure out the values, I would set the values using a binary search (set high then low then halfway between the two and repeat with the new halfway point being the high/low on the correct side), and then rebooting. Eventually I found optimal values. 
 
@@ -319,27 +335,35 @@ Note that the values will be different from the boot screen to the photo viewer.
 
 Also, if you need to rotate or flip the display, it's easy.
 
-    display_rotate=0        Normal
-    display_rotate=1        90 degrees
-    display_rotate=2        180 degrees
-    display_rotate=3        270 degrees
-    display_rotate=0x10000  horizontal flip
-    display_rotate=0x20000  vertical flip
+{% highlight python %}
+display_rotate=0        Normal
+display_rotate=1        90 degrees
+display_rotate=2        180 degrees
+display_rotate=3        270 degrees
+display_rotate=0x10000  horizontal flip
+display_rotate=0x20000  vertical flip
+{% endhighlight %}
 
 ### Automatic start of the photo frame software
 
 You'll want the software to start automatically on boot, so create a new init.d file at `/etc/init.d/flickrd`, and add the motion sensor and slideshow scripts to that new file:
 
-    sudo python /home/pi/photoframe/pir.py
-    /home/pi/photoframe/slideshow.sh
+{% highlight shell %}
+sudo python /home/pi/photoframe/pir.py
+/home/pi/photoframe/slideshow.sh
+{% endhighlight %}
 
 Then set the permissions with:
 
-    sudo chmod 755 /etc/init.d/flickrd
-    
+{% highlight shell %}
+sudo chmod 755 /etc/init.d/flickrd
+{% endhighlight %}
+
 and finally register the script to be run at startup:
 
-    sudo update-rc.d flickrd defaults
+{% highlight shell %}
+sudo update-rc.d flickrd defaults
+{% endhighlight %}
 
 Don't forget to run the `pir.py` script as root, since you'll need permissions to turn the monitor on and off.
 
@@ -353,26 +377,28 @@ If you used the code above with no issues, congratulations! You're in a minority
 
 Just getting the Raspberry Pi to respond to my commands was tricky enough, so I wrote this basic program to just blink the onboard LED. This is the Hello, World of the Raspberry Pi.
 
-    import RPi.GPIO as GPIO
-    import time
+{% highlight python %}
+import RPi.GPIO as GPIO
+import time
 
-    LED_PIN = 18
-    def blink(pin):
-        GPIO.output(pin,GPIO.HIGH)
-        print " ---> On"
-        time.sleep(.5)
-        GPIO.output(pin,GPIO.LOW)
-        print " ---> Off"
-        time.sleep(.5)
-        return
+LED_PIN = 18
+def blink(pin):
+    GPIO.output(pin,GPIO.HIGH)
+    print " ---> On"
+    time.sleep(.5)
+    GPIO.output(pin,GPIO.LOW)
+    print " ---> Off"
+    time.sleep(.5)
+    return
 
-    # to use Raspberry Pi board pin numbers
-    GPIO.setmode(GPIO.BOARD)
-    # set up GPIO output channel
-    GPIO.setup(LED_PIN, GPIO.OUT)
-    for _ in range(0,3):
-        blink(LED_PIN)
-    GPIO.cleanup() 
+# to use Raspberry Pi board pin numbers
+GPIO.setmode(GPIO.BOARD)
+# set up GPIO output channel
+GPIO.setup(LED_PIN, GPIO.OUT)
+for _ in range(0,3):
+    blink(LED_PIN)
+GPIO.cleanup() 
+{% endhighlight %}
     
 ### SSH'ing into your Raspberry Pi
 
@@ -383,11 +409,3 @@ You can also use `arp -a` to find it.
 ### Getting additional help
 
 Turn to [Stack Exchange's new Raspberry Pi section](http://raspberrypi.stackexchange.com). It's still in beta as of early 2014, but there's a whole lot of great questions.
-
-<script src="http://yandex.st/highlightjs/6.1/highlight.min.js"></script>
-<link rel="stylesheet" type="text/css" href="http://yandex.st/highlightjs/6.1/styles/github.min.css"></link>
-<script type="text/javascript">
-  hljs.initHighlightingOnLoad();
-</script>
-
-</div>

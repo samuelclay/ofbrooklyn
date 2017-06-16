@@ -186,27 +186,35 @@ void runSplittingStem(PulsePlug *pulse, int16_t currentLed);
 
 When a heartbeat is detected, it is first shot up the stem. The color is determined by how many pulse sensors are being used. 1 heartbeat shows amber. 2 heartbeats show in white and light red.
 
-    // State: stem rising
-    bool runStemRising(PulsePlug *pulse, PulsePlug *shadowPulse);
+{% highlight C %}
+// State: stem rising
+bool runStemRising(PulsePlug *pulse, PulsePlug *shadowPulse);
+{% endhighlight %}
 
 Once the heartbeat reaches the top of the stem, the petals then fill with light.
 
-    // State: petal rising
-    void beginPetalRising();
-    bool runPetalRising();
+{% highlight C %}
+// State: petal rising
+void beginPetalRising();
+bool runPetalRising();
+{% endhighlight %}
 
 After a set delay, the petal slowly lose light while waiting for the next heartbeat.
 
-    // State: petal falling
-    void beginPetalFalling();
-    bool runPetalFalling();
+{% highlight C %}
+// State: petal falling
+void beginPetalFalling();
+bool runPetalFalling();
+{% endhighlight %}
 
 Lots of debugging messages have been left in the code and are accessible using the Serial pin on the board. Just turn on `USE_SERIAL`, which is commented out at top. Note that this increases binary code size by about 2.5K. I wrote a lot of logging.
 
-    // Debugging
-    void printHeader();
-    void blink(int loops, int loopTime, bool half);
-    int freeRam ();
+{% highlight C %}
+// Debugging
+void printHeader();
+void blink(int loops, int loopTime, bool half);
+int freeRam ();
+{% endhighlight %}
 
 <a name="power"></a>
 

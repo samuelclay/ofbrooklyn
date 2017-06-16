@@ -12,17 +12,28 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date: "%B" }} {% assign day = post.date | date: "%-d"  %}
-{% case day %}
-  {% when '1' or '21' or '31' %}{{ day }}st,
-  {% when '2' or '22' %}{{ day }}nd,
-  {% when '3' or '23' %}{{ day }}rd,
-  {% else %}{{ day }}th,
-{% endcase %} {{ post.date | date: "%Y" }}</span>
+    <span class="post-date">
+        {{ post.date | date: "%B" }} {% assign day = post.date | date: "%-d"  %}
+        {% case day %}
+          {% when '1' or '21' or '31' %}{{ day }}st,
+          {% when '2' or '22' %}{{ day }}nd,
+          {% when '3' or '23' %}{{ day }}rd,
+          {% else %}{{ day }}th,
+        {% endcase %} 
+        {{ post.date | date: "%Y" }}
+    </span>
 
     {{ post.excerpt }}
     
-    <a href="{{ post.url }}">Continue reading <span class="post-continuation">{{ post.title }}</span> ({{ post.content | number_of_words | thousands_separated }} words)...</a>
+    {% capture content_words %} 
+      {{ post.content | number_of_words }} 
+    {% endcapture %} 
+    {% capture excerpt_words %} 
+      {{ post.excerpt | number_of_words }} 
+    {% endcapture %} 
+    {% if excerpt_words != content_words %}
+        <a href="{{ post.url }}">Continue reading <span class="post-continuation">{{ post.title }}</span> ({{ post.content | number_of_words | thousands_separated }} words)...</a>
+    {% endif %}
   </div>
   {% endfor %}
 </div>

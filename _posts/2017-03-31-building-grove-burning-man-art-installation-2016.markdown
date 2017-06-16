@@ -18,8 +18,6 @@ This post offers details on how this installation was built, from the custom cir
 
 <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-breathing-nighttime.jpg">
 
-<!--more-->
-
 Grove is made up of ten trees, each of which has its own breath sensor and set of two thousand LEDs across four 5 meter 144 LEDs/meter LED strips and 16 high current LEDs in the leaves. That takes both a lot of power to run and a lot of manpower to setup. This is what that setup looks like.
 
 <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-build-wide.JPG">
@@ -35,12 +33,14 @@ Since the trees light up with your breath, we need to consider how the breath is
 These are five stages to making the electronics work together:
 
 <ol>
-<li><a href="#sensor">Designing a breathing sensor</a></li>
-<li><a href="#main">Making the main control board</a></li>
-<li><a href="#dispatcher">Driving high current LEDs with a custom lighting board</a></li>
-<li><a href="#firmware">Writing the firmware</a></li>
-<li><a href="#power">Powering ten trees in Grove</a></li>
+<li><a href="{{ page.url }}#sensor">Designing a breathing sensor</a></li>
+<li><a href="{{ page.url }}#main">Making the main control board</a></li>
+<li><a href="{{ page.url }}#dispatcher">Driving high current LEDs with a custom lighting board</a></li>
+<li><a href="{{ page.url }}#firmware">Writing the firmware</a></li>
+<li><a href="{{ page.url }}#power">Powering ten trees in Grove</a></li>
 </ol>
+
+<!--more-->
 
 <h3 id="sensor">1. Designing a breathing sensor</h3>
 
