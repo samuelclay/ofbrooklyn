@@ -87,13 +87,15 @@ color: #303030;
 $('.default-text').input_default('Enter anything in...');
 </script>
 
-<h3>JavaScript Code</h3>
+<!--more-->
 
-<code class="javascript">
+### JavaScript Code
+
+{% highlight javascript %}
 (function($) {
-    
+
     $.fn.extend({
-        
+    
         input_default: function(default_text, opts) {
             if (typeof default_text !== 'string') {
                 opts = default_text;
@@ -104,7 +106,7 @@ $('.default-text').input_default('Enter anything in...');
             } else {
                 $.extend(opts, {'default_text': default_text});
             }
-            
+        
             var defaults = {
                 'default_text': 'Type here...',
                 'class_name': 'empty-input'
@@ -119,7 +121,7 @@ $('.default-text').input_default('Enter anything in...');
                     $this.addClass(options['class_name'])
                          .val(options['default_text']);
                 }
-                
+            
                 $this.bind('focus', function() {
                     if ($this.val() == options['default_text']) {
                         $this.val('')
@@ -137,37 +139,38 @@ $('.default-text').input_default('Enter anything in...');
                 });
             });
         }
-        
-    });
     
-})(jQuery);
-</code>
+    });
 
-<h3>Usage</h3>
+})(jQuery);
+{% endhighlight %}
+
+### Usage
 
 First, the HTML you can use:
 
-<code class="html">
+{% highlight html %}
 <label for="default-text" class="default-text-label">
     Here is a text box: 
     <input type="text" id="default-text" class="default-text" />
 </label>
-</code>
+{% endhighlight %}
+
 You can call `input_default` with no arguments and get the defaults:
 
-<code class="javascript">
+{% highlight javascript %}
 $('.text').input_default();
-</code>
+{% endhighlight %}
 
 Specify an optional string or class:
 
-<code class="javascript">
+{% highlight javascript %}
 $('.text').input_default('Enter text here...', {'class_name': 'empty'});
-</code>
+{% endhighlight %}
 
 Here is some sample CSS to use:
 
-<code class="css">
+{% highlight css %}
 .default-text {
     border: 1px solid #C0C0C0;
     padding: 2px;
@@ -184,4 +187,4 @@ Here is some sample CSS to use:
     font-weight: bold;
     color: #303030;
 }
-</code>
+{% endhighlight %}

@@ -4,18 +4,8 @@ title: 'What Happened to NewsBlur: A Hacker News Effect Post-Mortem'
 date: '2010-11-03T20:48:10+00:00'
 
 ---
-<style>
-.hackernews .image {
-text-align: center;
-margin: 0 auto;
-}
-.hackernews img{
-margin: 0 auto 12px;
-text-align: center;
-}
-</style>
-<div class="hackernews">
-<p>Last week I submitted my project, <a href="http://www.newsblur.com">NewsBlur</a>, a feed reader with intelligence, to <a href="http://news.ycombinator.com/item?id=1834305">Hacker News</a>. This was a big deal for me. For the entire 16 months that I have been working on the project, I was waiting for it to be Hacker News ready. It's <a href="http://github.com/samuelclay/NewsBlur/">open-source on GitHub</a>, so I also had the extra incentive to do it right.</p>
+
+Last week I submitted my project, <a href="http://www.newsblur.com">NewsBlur</a>, a feed reader with intelligence, to <a href="http://news.ycombinator.com/item?id=1834305">Hacker News</a>. This was a big deal for me. For the entire 16 months that I have been working on the project, I was waiting for it to be Hacker News ready. It's <a href="http://github.com/samuelclay/NewsBlur/">open-source on GitHub</a>, so I also had the extra incentive to do it right.
 
 <p>And last week, after I had launched premium accounts and had just started polishing the classifiers, I felt it was time to show it off. I want to show you what the Hacker News effect has been on both my server and my project.</p>
 
@@ -28,6 +18,8 @@ Kurt Vonnegut wrote: "Write to please just one person. If you open a window and 
 Let's consider Hacker News as that "one person," since for all intents, it is a single place. I wasn't working to please every Google Reader user: the die-hards, the once-in-a-seasons, or the twitter-over-rss'ers. For the initial version, I just wanted to please Hacker News. I know this crowd from seeing how they react to any new startup. What's the unique spin and what's the good use of technology, they would ask. What could make it better and is it good enough for now?
 
 If you're outsourcing tech and just applying shiny visuals to your veneer, the Hacker News crowd sniffs it out faster than a beagle in a meat market. So I thought the best way to appeal to this crowd is to actually make decisions about the UI that would confuse a few people, but enormously please many people. From comments on the Hacker News thread, it looks like I didn't wait too long.
+
+<!--more-->
 
 ### How the Server Handled the Traffic
 
@@ -156,4 +148,3 @@ I'm half-way to being profitable. I only need 35 more premium subscribers. But s
 I'm e-mailing blogs, chatting with folks who have a blog influence, and most importantly, continuing to launch new features and fix old ones. Thanks to Hacker News, I get to appeal to a graceful and sharp audience. And good looking.
 
 <i>I'm on Twitter as <a href="http://twitter.com/samuelclay/">@samuelclay</a>, and I'd love to hear from you.</i>
-</div>
