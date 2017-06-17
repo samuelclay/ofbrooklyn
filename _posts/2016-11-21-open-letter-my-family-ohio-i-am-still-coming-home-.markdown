@@ -3,6 +3,7 @@ layout: post
 title: 'Open letter to my family in Ohio: I am still coming home for Thanksgiving
   this year'
 date: '2016-11-21T13:38:10+00:00'
+permalink: 2016/11/21/open-letter-my-family-ohio-i-am-still-coming-home-/
 
 ---
 Dear Mom and Pop,
