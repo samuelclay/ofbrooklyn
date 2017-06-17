@@ -6,7 +6,7 @@ description:      ""
 
 url:              http://www.ofbrooklyn.com
 baseurl:          /
-permalink:        pretty
+permalink:        /:year/:month/:i_day/:title
 
 author:
   name:           'Samuel Clay'
