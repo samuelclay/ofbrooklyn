@@ -1,9 +1,3 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      rogue
-
-# Permalinks
-permalink:        pretty
 
 # Setup
 title:            OfBrooklyn.com
@@ -12,6 +6,7 @@ description:      ""
 
 url:              http://www.ofbrooklyn.com
 baseurl:          /
+permalink:        pretty
 
 author:
   name:           'Samuel Clay'
@@ -20,10 +15,9 @@ author:
 paginate:         5
 excerpt_separator: <!--more-->
 
-markdown:    kramdown
-highlighter: rouge
+markdown:         kramdown
+highlighter:      rouge
 
-# Custom vars
 version:          2.1.0
 
 github:
