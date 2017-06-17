@@ -17,7 +17,7 @@ paginate:         5
 excerpt_separator: <!--more-->
 
 feed:
-  path:           feeds/all
+  path:           feeds/all/
 
 markdown:         kramdown
 highlighter:      rouge
