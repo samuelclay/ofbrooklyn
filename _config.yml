@@ -15,6 +15,9 @@ author:
 paginate:         5
 excerpt_separator: <!--more-->
 
+feed:
+  path:           feeds/all
+
 markdown:         kramdown
 highlighter:      rouge
 
@@ -27,4 +30,5 @@ gems:
   - jekyll-paginate
   - jekyll-gist
   - rouge
+  - jekyll-feed
   

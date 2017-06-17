@@ -197,6 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 140)
+  jekyll-feed
   pygments.rb
 
 BUNDLED WITH
