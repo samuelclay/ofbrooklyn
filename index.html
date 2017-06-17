@@ -7,7 +7,7 @@ title: Home
   {% for post in paginator.posts %}
   <div class="post">
     <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
+      <a href="{{ post.url | prepend:site.github.url }}">
         {{ post.title }}
       </a>
     </h1>
@@ -32,7 +32,7 @@ title: Home
       {{ post.excerpt | number_of_words }} 
     {% endcapture %} 
     {% if excerpt_words != content_words %}
-        <a href="{{ site.baseurl }}{{ post.url }}">Continue reading <span class="post-continuation">{{ post.title }}</span> ({{ post.content | number_of_words | thousands_separated }} words)...</a>
+        <a href="{{ post.url | prepend:site.github.url }}">Continue reading <span class="post-continuation">{{ post.title }}</span> ({{ post.content | number_of_words | thousands_separated }} words)...</a>
     {% endif %}
   </div>
   {% endfor %}
