@@ -21,7 +21,7 @@ paginate:         5
 excerpt_separator: <!--more-->
 
 markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 
 # Custom vars
 version:          2.1.0
@@ -32,5 +32,5 @@ github:
 gems:
   - jekyll-paginate
   - jekyll-gist
-  - pygments.rb
+  - rouge
   
