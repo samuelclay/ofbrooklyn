@@ -3,7 +3,10 @@ layout: post
 title: Building Grove — interactive trees that come alive to your breath at Burning
   Man 2016
 date: '2017-03-31T08:17:43+00:00'
-
+redirect_from:
+  - /grove
+  - /grove/
+  
 ---
 
 Grove is a set of 10 interactive biofeedback sculptures, a conversation between humans and trees. Each tree is made of steel tubes, thousands of LEDs, and custom breathing sensors.

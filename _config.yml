@@ -25,10 +25,14 @@ version:          2.1.0
 
 github:
   repo:           https://github.com/samuelclay/ofbrooklyn/
-
-gems:
+  
+plugins:
   - jekyll-paginate
   - jekyll-gist
   - rouge
   - jekyll-feed
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
   

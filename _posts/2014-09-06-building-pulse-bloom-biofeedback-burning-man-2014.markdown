@@ -3,6 +3,10 @@ layout: post
 title: Building Pulse & Bloom - an interactive biofeedback installation at Burning
   Man 2014
 date: '2014-09-06T06:00:00+00:00'
+redirect_from:
+  - /pulse/
+  - /pulsebloom/
+  - /pulseandbloom/
 
 ---
 
