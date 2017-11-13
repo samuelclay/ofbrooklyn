@@ -2,6 +2,8 @@
 layout: post
 title: Adventures in Wearable Electronics - Making a Light-up Dress
 date: '2014-01-15T11:07:50+00:00'
+redirect_from:
+  - /dress
 
 ---
 <table>
