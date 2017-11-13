@@ -2,6 +2,8 @@
 layout: post
 title: Building a living photo frame with a Raspberry Pi and a motion detector
 date: '2014-01-02T06:00:00+00:00'
+redirect_from:
+  - /photoframe
 
 ---
 <style>
