@@ -19,19 +19,19 @@ Back in 2014 I was driving up the 101 coming back from a YC alumni Demo Day and 
 
 There are four steps to building your very own Turn Touch:
 
-[**Step one:** Laying out the buttons and writing the firmware](/2019/01/3/everything-turn-touch/#firmware)
+[**Step one:** Laying out the buttons and writing the firmware](/2019/01/3/building-turntouch/#firmware)
 
 ![](/media/img/turntouch/1*K_ERgjIZiFIX5yDOa5JJ7g.png)
 
-[**Step two:** Designing the remote to have perfect button clicks](/2019/01/3/everything-turn-touch/#cad)
+[**Step two:** Designing the remote to have perfect button clicks](/2019/01/3/building-turntouch/#cad)
 
 ![](/media/img/turntouch/1*iXMqpq5IsfudAeT3GZlLFA.png)
 
-[**Step three:** CNC machining and fixturing to accurately cut wood](/2019/01/3/everything-turn-touch/#cnc)
+[**Step three:** CNC machining and fixturing to accurately cut wood](/2019/01/3/building-turntouch/#cnc)
 
 ![](/media/img/turntouch/1*SYmywFE5tY3GBO9t9lcTiA.png)
 
-[**Step four:** Inlaying the mother of pearl](/2019/01/3/everything-turn-touch/#laser)
+[**Step four:** Inlaying the mother of pearl](/2019/01/3/building-turntouch/#laser)
 
 ![](/media/img/turntouch/1*kl8WDuTd0RpCkkipLeHx0g.png)
 
