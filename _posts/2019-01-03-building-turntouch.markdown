@@ -11,7 +11,7 @@ redirect_from:
 
 * * *
 
-![](/media/img/turntouch/1*1_w7IlHISYWdQjIGPcxRkQ.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*1_w7IlHISYWdQjIGPcxRkQ.jpeg)
 
 Back in 2014 I was driving up the 101 coming back from a YC alumni Demo Day and I had a lightbulb moment about the way I wanted to control my new Hue lightbulbs. That’s when the idea of [Turn Touch](https://turntouch.com/) was born. I’d had some experience building open source hardware [projects for my home](http://www.ofbrooklyn.com/2014/01/2/building-photo-frame-raspberry-pi-motion-detector/), and developing [open source art installations for Burning Man](http://www.ofbrooklyn.com/2014/09/6/building-pulse-bloom-biofeedback-burning-man-2014) at a slightly larger scale, but I had never thought I’d build an open source hardware project that would be commercially available (or at least [available on Kickstarter](https://www.kickstarter.com/projects/samuelclay/turn-touch-beautiful-control?token=1ef790b6)). [Turn Touch is now available to buy for $49](https://www.turntouch.com) if you don’t feel like building your own.
 
@@ -21,19 +21,19 @@ There are four steps to building your very own Turn Touch:
 
 [**Step one:** Laying out the buttons and writing the firmware](/2019/01/3/building-turntouch/#firmware)
 
-![](/media/img/turntouch/1*K_ERgjIZiFIX5yDOa5JJ7g.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*K_ERgjIZiFIX5yDOa5JJ7g.png)
 
 [**Step two:** Designing the remote to have perfect button clicks](/2019/01/3/building-turntouch/#cad)
 
-![](/media/img/turntouch/1*iXMqpq5IsfudAeT3GZlLFA.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*iXMqpq5IsfudAeT3GZlLFA.png)
 
 [**Step three:** CNC machining and fixturing to accurately cut wood](/2019/01/3/building-turntouch/#cnc)
 
-![](/media/img/turntouch/1*SYmywFE5tY3GBO9t9lcTiA.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*SYmywFE5tY3GBO9t9lcTiA.png)
 
 [**Step four:** Inlaying the mother of pearl](/2019/01/3/building-turntouch/#laser)
 
-![](/media/img/turntouch/1*kl8WDuTd0RpCkkipLeHx0g.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*kl8WDuTd0RpCkkipLeHx0g.png)
 
 <!--more-->
 
@@ -47,7 +47,7 @@ This is the full guide on how to make your own Turn Touch from scratch. This is 
 
 Through open-source hardware like Turn Touch, I’m working to lower the barrier to entry when it comes to creating and manufacturing your own complex hardware devices. Sure, it’s not what you might call a “traditional business plan”. But I strongly believe that by helping other people use the same tools I use, our community of makers gets larger and more inventive.
 
-![](/media/img/turntouch/1*3juMFkDjrO9yAKmO5Ay4wg.gif)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*3juMFkDjrO9yAKmO5Ay4wg.gif)
 
 At the end of the day, this isn’t a project devoted to turning a profit. It’s a project devoted to makers, wherever and whoever they are.
 
@@ -60,7 +60,7 @@ I’ve broken this manual up into four sections. If you’ve done a bunch of mac
 <a name="firmware" id="firmware"></a>
 ## Step 1: Design challenges with Bluetooth for a wooden remote
 
-![](/media/img/turntouch/1*K_ERgjIZiFIX5yDOa5JJ7g.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*K_ERgjIZiFIX5yDOa5JJ7g.png)
 
 At the heart of Turn Touch lies a circuit board with four tactile switches and a bluetooth module. This board alone is the remote, since it can be used without a wooden enclosure.
 
@@ -73,7 +73,7 @@ The circuit board is composed of four parts:
 *   The PCB
 *   Metal dome sticker array
 
-![](/media/img/turntouch/1*65BkQmv6MTMZ3EYkQaNnGg.jpeg)The Turn Touch circuit board
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*65BkQmv6MTMZ3EYkQaNnGg.jpeg)The Turn Touch circuit board
 
 #### Bluetooth Module
 
@@ -87,13 +87,13 @@ Philips Hue lightbulbs speak Zigbee, a low-power peer-to-peer mesh network, and 
 
 Part of the requirement for the remote is that a button press is near-instantaneous (with less than a 100 ms delay). But a WiFi module, such as [the popular ESP8266](https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview), draws up to 250 mA at 3V (750 mW) when transmitting and as low as 0.9 mA when sleeping.
 
-![](/media/img/turntouch/1*NCt78B1JDelqRlgFyCA1hg.jpeg)Espressif ESP8266 WiFi module, [$6.95 on Adafruit](https://www.adafruit.com/product/2491)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*NCt78B1JDelqRlgFyCA1hg.jpeg)Espressif ESP8266 WiFi module, [$6.95 on Adafruit](https://www.adafruit.com/product/2491)
 
 Considering a standard CR2032 coin cell battery has 225 mAh, you can run a WiFi module with normal use (sleeping 99% of the time) for only 28 hours if you want instantaneous feedback. You can use bigger batteries, but now you’re working on integrating giant AA batteries into a tiny hand-held remote, which won’t work.
 
 Better yet would be to bring the WiFi module down to the 10 µA level. But that requires a deep sleep which severs the connection. So when you press a button that requires the module to wakeup from deep sleep, it can takes several seconds to register the click. Amazon Dash buttons work this way and are able to last for over a year, since a several second latency is not a problem for them.
 
-![](/media/img/turntouch/1*k_7Pls_8SqkIAeKUBZC0dA.jpeg)[Raytec MDBT40](http://www.raytac.com/product_detail.php?id=38) Bluetooth LE module, $7.50 on Seeed
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*k_7Pls_8SqkIAeKUBZC0dA.jpeg)[Raytec MDBT40](http://www.raytac.com/product_detail.php?id=38) Bluetooth LE module, $7.50 on Seeed
 
 **Your phone to the rescue**
 
@@ -113,7 +113,7 @@ The principle concerns for a Bluetooth module are:
 
 Here’s how the most well known and easily available Bluetooth 4.0 modules compare.
 
-![](/media/img/turntouch/1*zWCXHHammpvbPA9k4yl8ZA.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*zWCXHHammpvbPA9k4yl8ZA.png)
 
 While all of the modules fit the necessarily small footprint, the MDBT40 module with Nordic’s nRF51 series won out due to the robust community and plentiful open source examples. It also had twice the max output power with half the power requirements of the BLE112\. Plus it came with example projects for over-the-air device firmware updates (OTA DFU), which allows the remote to be easily upgraded for firmware changes down the road.
 
@@ -142,13 +142,13 @@ Apart from the external crystal used for low power, the only other peripheral we
 
 #### The PCB
 
-![](/media/img/turntouch/1*IsayLJdUYwWGvWpHBCoEXQ.png)The Turn Touch circuit schematic
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*IsayLJdUYwWGvWpHBCoEXQ.png)The Turn Touch circuit schematic
 
 Follow the rules and you get the schematic drawing above. I used EAGLE. Next time I would use KiCAD, if only because with open source EDA software it becomes easy to share the schematic and board layout with consultants and online forums for debugging and optimization.
 
 You can [download the board layout on Github](https://github.com/samuelclay/turntouch-remote/tree/master/remote%20eagle).
 
-![](/media/img/turntouch/1*eVM-tGHwvdzFM5jSw-JUDw.png)![](/media/img/turntouch/1*S1fzU2aXV_PYRxSvP-Ydcw.png)Top (left) and bottom (right) layout of the circuit board
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*eVM-tGHwvdzFM5jSw-JUDw.png)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*S1fzU2aXV_PYRxSvP-Ydcw.png)Top (left) and bottom (right) layout of the circuit board
 
 Here’s where we get our first intersectional consideration. Before we were just thinking about what happens to the performance of the remote based on decisions made about the firmware and microcontroller. But the shape of the circuit board needs to know what the rest of the remote looks like.
 
@@ -160,11 +160,11 @@ The 8 magnets that hold the remote together look like they have bitten the PCB o
 
 Buttons come in many shapes and sizes to satisfy different requirements. I spent a lot of time looking at buttons that were industrial sized and could take pinball machine levels of abuse. Finding a way to press down and make contact was not trivial. Getting to “metal dome array” took a long, long time.
 
-![](/media/img/turntouch/1*p9bN3Zy2vhkh5KVvRr5dPw.jpeg)Metal dome sticker arrays are custom yet inexpensive
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*p9bN3Zy2vhkh5KVvRr5dPw.jpeg)Metal dome sticker arrays are custom yet inexpensive
 
 The requirement for the remote was to have a low profile (short) button, but all of the mechanics of off the shelf buttons have a vertical profile of nearly a centimeter.
 
-![](/media/img/turntouch/1*fVU31Of0SobGLR9PGe88Yw.jpeg)![](/media/img/turntouch/1*K8NXm_QjhbVeyAFlrhahjQ.jpeg)E-Switch [TL3315](http://www.digikey.com/product-detail/en/e-switch/TL3315NF250Q/EG4622CT-ND/1870402) Series (L) and Panasonic [EVQ6P6](http://www.digikey.com/products/en?FV=ffec59b6) Series (R)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*fVU31Of0SobGLR9PGe88Yw.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*K8NXm_QjhbVeyAFlrhahjQ.jpeg)E-Switch [TL3315](http://www.digikey.com/product-detail/en/e-switch/TL3315NF250Q/EG4622CT-ND/1870402) Series (L) and Panasonic [EVQ6P6](http://www.digikey.com/products/en?FV=ffec59b6) Series (R)
 
 You can find surface mount tactile switches for $0.20 on Digikey. The E-Switch is one example. There are two reasons I did not choose to use this, one pragmatic and one aesthetic.
 
@@ -172,15 +172,15 @@ Practically speaking, if you have surface mount components on two sides of a boa
 
 Aesthetically speaking, there’s this phenomenom I like to call “accidental swastika”.
 
-![](/media/img/turntouch/1*LMaJwKmXFEnPCPCQ0jMW_g.png)Whoops
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*LMaJwKmXFEnPCPCQ0jMW_g.png)Whoops
 
 By using a sticker dome array, we save money on PCBA but instead have to adhere the dome array during the full box build assembly process later on. Aligning a sticker array takes far less time, and we have the ability to choose between different click feels, pressures, and click sounds with tactile metal domes.
 
-![](/media/img/turntouch/1*DpY0Bt0wQ808XOcmFVhC1g.jpeg)Depth of field for a half-inch metal dome
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*DpY0Bt0wQ808XOcmFVhC1g.jpeg)Depth of field for a half-inch metal dome
 
 [Snaptron M-Series metal domes](http://www.snaptron.com/products/standard-domes/m-series/) were the first dome I tried. It was magical. All I had to do was design the board layout with two concentric rings, add a via in the center as an escape for air, and tape the metal dome down.
 
-![](/media/img/turntouch/1*a4zK8LbjcYBumsSo-obrOw.jpeg)Taping metal domes with scotch tape on the left, custom made button array on the right![](/media/img/turntouch/1*ar6NE8SLL6xaD89OfCMaUw.gif)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*a4zK8LbjcYBumsSo-obrOw.jpeg)Taping metal domes with scotch tape on the left, custom made button array on the right![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*ar6NE8SLL6xaD89OfCMaUw.gif)
 
 Ordering a metal dome array was easy. I just had to upload my gerber CAM files from EAGLE and send it off to [CMD](http://www.china-metaldome.com). $100 later I had 100 metal dome arrays with 400 individual buttons. Peeling them off and sticking them in the right spot is quick and accurate.
 
@@ -191,11 +191,11 @@ We now have a functional circuit board with a long-lived battery running Bluetoo
 <a name="cad" id="cad"></a>
 ## Step 2: Learning to build CAD models of a wooden remote
 
-![](/media/img/turntouch/1*iXMqpq5IsfudAeT3GZlLFA.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*iXMqpq5IsfudAeT3GZlLFA.png)
 
 The source code for the CAD models is [available on Github](https://github.com/samuelclay/turntouch-enclosure/).
 
-![](/media/img/turntouch/1*hSHOYK-KBSDjhD_tA1P0Fg.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*hSHOYK-KBSDjhD_tA1P0Fg.png)
 
 Now let’s put it all together. The remote is broken up into 7 stacked parts, starting at the top:
 
@@ -219,11 +219,11 @@ The [models for Solidworks](https://github.com/samuelclay/turntouch-enclosure/tr
 
 The question to consider when designing each of these layers is what is their relation to the layer immediately above and below itself. The circuit board defines where its mounting pegs are for aligning with the plastic insert below it, and it defines the button dome positions on top for aligning with the plastic button arms above.
 
-![](/media/img/turntouch/1*qY_YB1u6m3e58ASrYJea2Q.png)Seven layers: wood buttons, top wood case, top plastic insert, plastic button arms, circuit board, bottom plastic insert, bottom wood case
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*qY_YB1u6m3e58ASrYJea2Q.png)Seven layers: wood buttons, top wood case, top plastic insert, plastic button arms, circuit board, bottom plastic insert, bottom wood case
 
 There’s quite a bit of overlap, so each of these pieces fit together nicely to form a much more compact package.
 
-![](/media/img/turntouch/1*HSHKaV2v1k2jjRwWjUyzeA.png)2" wide × 2" deep × 0.68" tall (52mm × 52mm × 18mm)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*HSHKaV2v1k2jjRwWjUyzeA.png)2" wide × 2" deep × 0.68" tall (52mm × 52mm × 18mm)
 
 The circuit board defines the most fundamental constraints, so the design must form around it. That’s not always the case, but when the device is trying to be as compact as possible, it’s a good place to start.
 
@@ -233,11 +233,11 @@ On the other hand we have the outer design, which is shaped to fit your hand. Th
 
 The button travels down the height of the metal dome when pressed, so there needs to be some way of holding the button in place while it’s pressed down so that it reliably returns to the original position.
 
-![](/media/img/turntouch/1*aEhC7LYqhteZeAc4bKeJsg.png)The actuator is tall enough to allow the button arms to bend without deformation
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*aEhC7LYqhteZeAc4bKeJsg.png)The actuator is tall enough to allow the button arms to bend without deformation
 
 Below you can see the concept of buttons arms. Each button has two arms that angle out diagonally from the center of the button. This holds the button in place from the sides.
 
-![](/media/img/turntouch/1*Vglx003GWuRPD0rBRpzCeQ.png)The button array on the left attaches to the top enclosure on the right, held in place by its own structure
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*Vglx003GWuRPD0rBRpzCeQ.png)The button array on the left attaches to the top enclosure on the right, held in place by its own structure
 
 The remote has no border between buttons, so the button arms cannot cross over on top of other buttons. Two arms come from opposite corners and merge into the button half-way down its length.
 
@@ -245,7 +245,7 @@ Why not extend the arms all the way down to the center of the remote? Extending 
 
 The length of the arms is a good compromise between strength and flexibility.
 
-![](/media/img/turntouch/1*L-Nl9XbdiIOvDwRT_o1XZg.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*L-Nl9XbdiIOvDwRT_o1XZg.jpeg)
 
 Possibly my favorite design inside the remote is how the buttons are held in place. Originally there were pegs in the insert and holes in the button arms. This worked but not well. It was at the mercy of various tolerances when building two separate plastic pieces: the top insert and the button arm. Any misalignment had to be corrected for on the other piece.
 
@@ -259,11 +259,11 @@ Users are going to press a button on any part of the button. And if the press is
 
 Each button is held in opposite diagonal corners, so when a button is pressed the arms deflect slightly downward. But they also form an axis that the button can rotate on.
 
-![](/media/img/turntouch/1*Mlt1f9YDNXuLflsbRj1xNg.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*Mlt1f9YDNXuLflsbRj1xNg.png)
 
 If the button is pressed anywhere not on that axis of rotation, it will either push up the inside corner or outside corner and pull down the other side. To prevent this, we add a paddle on the outer corner of the button. This paddle is aligned with the plastic inserts so that it has a tiny bit of wiggle room but ultimately is constrained from moving up or down, preventing the button from rotating.
 
-![](/media/img/turntouch/1*H-C4GP1FNMwUwnSoS-k3ew.png)The blue paddle rests between the bottom and top plastic inserts, preventing the button from rotating when pressed
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*H-C4GP1FNMwUwnSoS-k3ew.png)The blue paddle rests between the bottom and top plastic inserts, preventing the button from rotating when pressed
 
 #### Third problem: Holding the remote together
 
@@ -271,7 +271,7 @@ During a demo this is everybody’s favorite part. The top and bottom of the rem
 
 Most remotes use a plastic latch that either needs to be pinched by the user or pulled apart. Alternatively, some remotes are round and can be rotated around internal threads to open.
 
-![](/media/img/turntouch/1*CCPkSIXazJl1VVLaAqgj_Q.png)![](/media/img/turntouch/1*3jeUDHoiA2xo4kJQj-g_9Q.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*CCPkSIXazJl1VVLaAqgj_Q.png)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*3jeUDHoiA2xo4kJQj-g_9Q.jpeg)
 
 To solve this problem, I turned to a set of eight strong neodymium disc magnets. They get glued and placed into holes that are sized slightly smaller than the disc magnet, forcing the opening on the side of the hole to expand slightly. This holds the magnet in place and, coupled with an adhesive, ensures a strong hold on the magnet.
 
@@ -281,19 +281,19 @@ It is so satisfying to pull a remote apart and let it snap back together with th
 
 This problem has been one of the most perplexing and unforgiving issues I’ve come across on the remote. The issue is that the 7 separate pieces of the remote need to be adhered together in a way that compensates for the different relative tolerances and variable sizes of each component.
 
-![](/media/img/turntouch/1*8LIlphMSCmhFPMZHy-yQ9w.png)![](/media/img/turntouch/1*75hSqvyIhqAePK6KzW4gYQ.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*8LIlphMSCmhFPMZHy-yQ9w.png)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*75hSqvyIhqAePK6KzW4gYQ.png)
 
 There are only a few sizes that must remain fixed. These are the circuit board, which has been fixed in size due to the requirements of the button positions. Second are the wood case’s top and bottom pieces need to be the same size and aligned perfectly with each other so that they form a seamless lip.
 
 The trick is to have a buffer that can absorb the differences in tolerance between the two constraints. This buffer is between the inside of the wood and outside of the plastic insert. That space is apportioned to allow for inaccuracies that arise from two-sided machining.
 
-![](/media/img/turntouch/1*6vDX8XxzezKPYAGkqJqLKg.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*6vDX8XxzezKPYAGkqJqLKg.png)
 
 What the above image shows is that the wood, on top, has a variable amount of space for the plastic insert to move around and align itself. The problem that arises during machining is that the top and bottom may not be evenly aligned, so the tolerance has to account for the maximum offset on one top and the maximum offset in the opposite direction on bottom.
 
 While there is no issue with having a buffer that moves the button arms around, the buttons are no longer perfectly aligned with the opening in the top of the case. To account for this, the plastic button arms are inset from the edges, as evidenced by the purple circuit board peeking around the margins of the teal button arms below.
 
-![](/media/img/turntouch/1*RLsILQKmCX3lDeBOxrz88Q.png)Smaller button arms (teal) allow the wood to be independently aligned without overlapping other buttons
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*RLsILQKmCX3lDeBOxrz88Q.png)Smaller button arms (teal) allow the wood to be independently aligned without overlapping other buttons
 
 The wood buttons are glued on top of the plastic button arms, so they don’t need to be perfectly aligned. But the plastic arms are reduced in size so that a wood button isn’t sitting on top of two plastic arms that happen to be slightly offset due to any alignment issues.
 
@@ -301,7 +301,7 @@ But this brings up another issue. We want to maximize the amount of wood at ever
 
 Let’s turn back to the see-through side view of the remote.
 
-![](/media/img/turntouch/1*bT6pKo2uxOw_Glp3hx6JBQ.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*bT6pKo2uxOw_Glp3hx6JBQ.png)
 
 Notice the space by the yellow arrow is a weak spot that runs along the circumference of the remote. By minimizing the height of the plastic insert we can maximize the wood that holds it in. This minimizes the possibility of split wood during the machining process.
 
@@ -312,19 +312,19 @@ And with that we come to the most exciting part of the process, how to successfu
 <a name="cnc" id="cnc"></a>
 ## Step 3: CNC machining and fixturing to accurately cut a wooden remote
 
-![](/media/img/turntouch/1*SYmywFE5tY3GBO9t9lcTiA.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*SYmywFE5tY3GBO9t9lcTiA.png)
 
 Now that we have our models, we need to figure out how to machine them out of wood. Workholding is the principle concern here. In order to consistently machine the wood on two sides, the wood needs to be held down. This is much harder than it sounds.
 
 The source code for the CAM toolpaths explored below is [available on Github](https://github.com/samuelclay/turntouch-enclosure/).
 
-![](/media/img/turntouch/1*41Vskcx9fJWeav32Fx6IZQ.jpeg)Lumber and machining fixtures line the entire wall in my office in SF
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*41Vskcx9fJWeav32Fx6IZQ.jpeg)Lumber and machining fixtures line the entire wall in my office in SF
 
 There are two central issues to consider: one is that each piece needs to be machined on both sides, and second is that the workpiece needs to be held down both facing up and facing down so that it can be machined on both sides. In our case, we want to scoop out the insides of the remote out to fit the circuit board and button arms while contour cutting the outsides of the remote to fit the desired shape.
 
 Designing the CNC machine toolpaths to sculpt the contour of the case while pocketing out its insides, assuming the workpiece is held down, is not terribly difficult. There are only a few strategies that you need to use and they mostly involve answering the question of how fast to cut while maintaining as clean a cut as possible, which we’ll get to later.
 
-![](/media/img/turntouch/1*FCAE9gzG-YWB-ZKkwlAsTA.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*FCAE9gzG-YWB-ZKkwlAsTA.png)
 
 Above, I’ve designed the fixture that gives us 15 pattern-matched remotes at a time from a single board of wood 24" long and 7" deep. That’s just about 1 board-foot (bf) of wood. A single board-foot costs anywhere from $5 to $50, with maple at $5/bf, mahogany at $10/bf, padauk at $15/bf, and rosewood at $40/bf.
 
@@ -332,7 +332,7 @@ Above, I’ve designed the fixture that gives us 15 pattern-matched remotes at a
 
 The top half of the fixture is the inside of the remote, the bottom half is the outside of the remote. We’re machining both the top and the bottom next to each other at the same time because we want the wood to pattern match.
 
-![](/media/img/turntouch/1*b7Fcr5SoksZSR0asVIUk6g.png)![](/media/img/turntouch/1*vfFyWOKXOd_ZNC-tSleDYg.png)Examples of pattern matching with mahogany on the left and padauk on the right![](/media/img/turntouch/1*SgNbKWiAqSiGV5wRJLIAsQ.png)Pattern-matched Rosewood halves come together beautifully to form a single remote
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*b7Fcr5SoksZSR0asVIUk6g.png)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*vfFyWOKXOd_ZNC-tSleDYg.png)Examples of pattern matching with mahogany on the left and padauk on the right![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*SgNbKWiAqSiGV5wRJLIAsQ.png)Pattern-matched Rosewood halves come together beautifully to form a single remote
 
 Since we want the top of the remote to match the bottom of the remote, they must be machined next to each other. Our fixture reflects this by placing a top half next to a bottom half, and always in the direction of the wood grain. That way when the top case is flipped over like a book and closes on the bottom case, the grain lines match up.
 
@@ -340,7 +340,7 @@ Since we want the top of the remote to match the bottom of the remote, they must
 
 Let’s start with the first fixture design because it was simple and was designed to only make a single remote at a time.
 
-![](/media/img/turntouch/1*oWvxvtMGYpNRBve8QBzWAQ.gif)The first fixture that successfully machined a remote
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*oWvxvtMGYpNRBve8QBzWAQ.gif)The first fixture that successfully machined a remote
 
 This animated gif beautifully illustrates the basics of machining the remote on both sides. This design uses a vise clamp that will quickly prove to be haphazard and inaccurate.
 
@@ -354,7 +354,7 @@ The good news is that it’s easy to design a better fixture. The vise clamp suf
 
 We can clean these issues up with a fixture cut into a ¾" plywood board.
 
-![](/media/img/turntouch/1*tmAr_akkmAy9ZJ0wsS8Etw.jpeg)![](/media/img/turntouch/1*HsyxPF42hjpxeGyPIJXUdg.jpeg)![](/media/img/turntouch/1*N0ZynMYhzrGoSrDID1GPiA.jpeg)Nearly finished with buttons on the left and cases on the right, but still needs to be cut out and sanded down before finishing.
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*tmAr_akkmAy9ZJ0wsS8Etw.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*HsyxPF42hjpxeGyPIJXUdg.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*N0ZynMYhzrGoSrDID1GPiA.jpeg)Nearly finished with buttons on the left and cases on the right, but still needs to be cut out and sanded down before finishing.
 
 This is fundamentally the same fixture as the vise clamp with a few important differences. See those alignment pin holes in the top image? Those are going to be responsible for keeping our x and y axis consistent when the piece is flipped over. And the z axis is kept consistent with the use of a flat plywood board that is level to the CNC’s spoilboard.
 
@@ -362,13 +362,13 @@ Note that the fixture itself is not registered to the table, it’s simply attac
 
 So this fixture addresses alignment and orientation issues in all three axes, but because it is not itself registered to the table, we cannot reuse the registration holes, as the fixture is never going to be put into the exact same spot again next time it’s used.
 
-![](/media/img/turntouch/1*TULdMMKscIXSEZIH2Hea6g.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*TULdMMKscIXSEZIH2Hea6g.png)
 
 More importantly, there are still tabs holding the wood remotes in place during machining. Tabs take time to machine around since you can’t just have your toolpath wrap continuously around the contours of the remote without stopping. The CNC machine now needs to pick itself up and climb over the tabs for each rotation around the remote.
 
 Using tabs also means that the remotes cannot be placed right next to each other. There are these bars of unused and uncut wood between each half of the remote. These untouched bars allow the wood to be held down with clamps, since the remote isn’t sitting on anything. But they are a waste of wood!
 
-![](/media/img/turntouch/1*AybBURwCSFn6mhOh5pChbQ.gif)A belt sander once nearly ate through my fingernail from the top
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*AybBURwCSFn6mhOh5pChbQ.gif)A belt sander once nearly ate through my fingernail from the top
 
 And to top it off, once the tabs are cut with diagonal cutters and you pull the individual remote halves out of the larger workpiece, you have to manually sand down the tabs, which is error prone and dangerous.
 
@@ -378,13 +378,13 @@ Here’s where it gets interesting. In order to get rid of tabs, we have to figu
 
 The cutter is contouring around the outside border of the case, so there’s no way to hold the case from above without having it in the path of the cutting tool. Ideally we’d hold it from below, but that requires messy adhesives or a complicated locking system. And that brings us to vacuums.
 
-![](/media/img/turntouch/1*f_Qnn9lCfHhmw3UMy_HWZA.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*f_Qnn9lCfHhmw3UMy_HWZA.jpeg)
 
 Vacuum tables are outside our price range expensive, but we can build our own for the cost of plywood and glue. Above you can see that we’ve built a hollow box about 3" high. It’s just ¾" plywood cut into the shape of a box and glued tight. On top we’ve glued additional wood, which is then machined into the inverse of the remote.
 
 #### For a fixture, alignment is everything
 
-![](/media/img/turntouch/1*SMf9QntQrBweKSAHeOtigQ.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*SMf9QntQrBweKSAHeOtigQ.png)
 
 Zooming in we see that the top case (left) is too thin to use a large hole. So we drill a few dozen 1/8" holes around the perimeter of the top case.
 
@@ -392,11 +392,11 @@ On the right we have the bottom case, which is solid in the center, so we can us
 
 You may also notice 5 metal alignment pins on each half. The vacuum holds the case down in the z axis, but the alignment pins are needed to hold the case down in the x and y axis as the wood is being machined.
 
-![](/media/img/turntouch/1*MXeJkrRInOjdeP6Locqplg.jpeg)A cutaway that shows the alignment pins do their job
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*MXeJkrRInOjdeP6Locqplg.jpeg)A cutaway that shows the alignment pins do their job
 
 Above you can see how the 1/8" alignment pins handle the slight variance in the buffer between the case and the inverse fixture. They do a great job of holding the remote tight while it’s being worked over by the cutting tool. Before I used these alignment pins, oftentimes a case would become dislodged by the cutter, flinging it across the room.
 
-![](/media/img/turntouch/1*BwIVQc87zPX-cdx88Q0vyw.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*BwIVQc87zPX-cdx88Q0vyw.png)
 
 The fixture itself sits on a spoilboard that is aligned to the machine, which allows for reuse of the fixture without having to recut anything. To pre-align the fixture, simply cut holes into your own spoilboard that sits on top of the machine’s spoilboard.
 
@@ -408,25 +408,25 @@ I’ve also cut out handles into the fixture, which makes carrying these heavy f
 
 Just attach your vacuum hose to [a $3 flanged inlet fitting](https://www.amazon.com/2-1-2-Flanged-Inlet-Fitting/dp/B003OCAY66) attached to the side of the fixture. You’ll need to cut a hole out of the fixture. I used a [$17 hole saw](http://www.homedepot.com/p/Milwaukee-2-1-2-in-Hole-Dozer-Hole-Saw-with-Arbor-49-56-9669/202327740) on a drill press to poke a hole for the vacuum to attach to.
 
-![](/media/img/turntouch/1*7CYOzl81hnM1VdfKLzGwfw.jpeg)The vacuum fixture uses a standard Shopvac 2¾" hose
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*7CYOzl81hnM1VdfKLzGwfw.jpeg)The vacuum fixture uses a standard Shopvac 2¾" hose
 
 This is your standard 2½" hose, attached to an inexpensive ShopVac. You don’t need more than a couple horsepower to pull enough air to hold the wood down in place. This vacuum seal isn’t going to do anything for movement in the x and y direction, so if all it has to accomplish is offsetting the minor pull in the z direction due to vibration, then you won’t need an industrial pump or expensive vacuum to do the job.
 
 In other words, it shouldn’t hurt when you place your hand over the hose and seal the vacuum.
 
-![](/media/img/turntouch/1*LLt1oIIoc-d7kYuqemL0Iw.jpeg)A beautiful rosewood workpiece being machined into five remotes
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*LLt1oIIoc-d7kYuqemL0Iw.jpeg)A beautiful rosewood workpiece being machined into five remotes
 
 Because the fit is so tight, we need to add tiny ejection pockets underneath the wood case so we can wedge a lever in and pop the remote out. You can see this space at the bottom in the above photo.
 
 You can see the secondary spoilboard on the button vacuum fixture, which follows the same principles as the case vacuum fixture. There are holes beneath each button, and three alignment pins holding the buttons in place as they are machined.
 
-![](/media/img/turntouch/1*lMXQQKBOLQUCKtKHNBelrQ.jpeg)![](/media/img/turntouch/1*uwLN8XQtgIsTkHwgDSynfA.gif)![](/media/img/turntouch/1*6iHBSBK1cznYu6Wf6Tm7TA.jpeg)Maple (center) being machined, Brazilian Satinwood (right) cut up into eight remotes worth of buttons
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*lMXQQKBOLQUCKtKHNBelrQ.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*uwLN8XQtgIsTkHwgDSynfA.gif)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*6iHBSBK1cznYu6Wf6Tm7TA.jpeg)Maple (center) being machined, Brazilian Satinwood (right) cut up into eight remotes worth of buttons
 
 #### Using off-the-shelf tools and cutters
 
 It’s important to keep as many tools and parts of the assembly off-the-shelf. There’s something to be said about being able to order more components and tools from a trusted vendor rather than having to source new custom tools. All of the tools used to machine Turn Touch are relatively inexpensive and will last you long enough to machine thousands of remotes.
 
-![](/media/img/turntouch/1*McKRgd6pz38R4GVKUeQ9wA.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*McKRgd6pz38R4GVKUeQ9wA.jpeg)
 
 The tools above are much of what I use in the wood shop. Starting with the milling and drilling bits, left to right:
 
@@ -467,13 +467,13 @@ The feeds and speeds took a bit of trial-and-error but eventually I settled on v
 
 My rule of thumb for mahogany is 120 inches per minute with no more than a 0.15" step down. For rosewood that number is cut in a third, so 40 ipm. Finding that number is simply a matter of running the machine and interactively increasing or decreasing the feeds until there is no chatter and the CNC machine sounds like it’s under control.
 
-![](/media/img/turntouch/1*gkmprdnzAS0Xu8JbW2wQMA.png)![](/media/img/turntouch/1*pH17n6Z4HuGGYVwcC5oTqQ.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*gkmprdnzAS0Xu8JbW2wQMA.png)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*pH17n6Z4HuGGYVwcC5oTqQ.png)
 
 **How do I know if I’m moving too quickly?**
 
 Apart from the horrible sounds of chatter, this may happen.
 
-![](/media/img/turntouch/1*dJyEUt06ErHAclH7xHoVhA.jpeg)I keep all of my broken cutters in a museum of mistakes
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*dJyEUt06ErHAclH7xHoVhA.jpeg)I keep all of my broken cutters in a museum of mistakes
 
 **Different hardwoods need different cutting speeds**
 
@@ -483,7 +483,7 @@ Some harder woods need to be machined at a slower speed than less dense woods. R
 
 Below is a picture of what the fixture looks like without the wood on top. Notice that the fixture is red at parts. That denotes that the wood is about 0.005" inset. This means that there is a slight gap between the inverse fixture and the wood workpiece that will fit over it.
 
-![](/media/img/turntouch/1*oRMMShDnuGNyGZ1orK2uSQ.png)The internals of the front three remotes without the wood
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*oRMMShDnuGNyGZ1orK2uSQ.png)The internals of the front three remotes without the wood
 
 The reason for this slight gap is that if there is no gap then the workpiece will either not fit perfectly onto the fixture or it will get stuck, as it is holding the fixture on all faces. By adding a 0.005" gap between the two, they can better fit together. And the alignment pins and vacuum holes protect the wood from shifting around any axis, so the buffer could possibly even be bigger.
 
@@ -494,21 +494,21 @@ With that, we now have perfectly aligned wood pieces that are ready to be adhere
 <a name="laser" id="laser"></a>
 ## Step 4: Design challenges with laser cutting mother of pearl and laser engraving a wooden remote
 
-![](/media/img/turntouch/1*kl8WDuTd0RpCkkipLeHx0g.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*kl8WDuTd0RpCkkipLeHx0g.png)
 
 I set out to make the most beautiful remote I could. And after observing what many of the most beautiful handheld objects I’ve seen had in common, it became clear that Turn Touch deserves an inlay.
 
 The source code for the inlay paths and laser cutter settings is [available on Github](https://github.com/samuelclay/turntouch-enclosure/tree/master/inlay).
 
-![](/media/img/turntouch/1*q_ZAQm1B2AbKoFY8pNbGpg.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*q_ZAQm1B2AbKoFY8pNbGpg.jpeg)
 
 The choice of mother of pearl came naturally. Wood and shell are both natural materials that are sustainably grown and can be beautiful to behold. The trouble with mother of pearl is that it is an exceptionally brittle material. Great care must be taken in both cutting the shell and then adhered it to the wood.
 
-![](/media/img/turntouch/1*Rvbar8w4OpFQ-V5smNypoA.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*Rvbar8w4OpFQ-V5smNypoA.jpeg)
 
 There are two main considerations to make when thinking about cutting the mother of pearl to fit. First is that the remote needs to be engraved to perfectly fit the mother of pearl. Second is that the mother of pearl itself needs to be cut to fit the engraved wood with no margin between the two.
 
-![](/media/img/turntouch/1*MHL1zicAyCOZCATlK5CKZw.jpeg)As thin as paper, this mother of pearl shell is only 0.007" thick.
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*MHL1zicAyCOZCATlK5CKZw.jpeg)As thin as paper, this mother of pearl shell is only 0.007" thick.
 
 #### Engraving the wood
 
@@ -520,11 +520,11 @@ Originally I used the ShopBot CNC machine to engrave the logo into the wood usin
 *   The depth of the cut (height) kept changing due to machine tolerance.
 *   This involves a tool change, which is costly and time consuming.
 
-![](/media/img/turntouch/1*LLgf8DykM610M_1PCE0j-w.png)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*LLgf8DykM610M_1PCE0j-w.png)
 
 Worst of all, due to differences between machines, the laser cut mother of pearl would have slightly different dimensions from the CNC engraved wood in both the x and y axes, resulting in a not-quite-perfect fit, leaving **a variable sized gap between the shell and the wood**.
 
-![](/media/img/turntouch/1*ufHw40rEDXe4y36XRqyyAA.jpeg)There’s an unfortunate margin between the engraved wood and the cut shell
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*ufHw40rEDXe4y36XRqyyAA.jpeg)There’s an unfortunate margin between the engraved wood and the cut shell
 
 The fix is to use the same machine for both engraving and cutting so that the same machine tolerances are applied, resulting in a uniform offset between wood and shell.
 
@@ -536,11 +536,11 @@ Before we begin working with the laser cutter, we take simple safety steps to en
 
 Wear gloves and wear a dust mask. Your lungs, skin, hair, and fingers will thank you.
 
-![](/media/img/turntouch/1*sE8hMAIyh7i7YFV2JScKlA.jpeg)Nitrile gloves have no latex and are not coated in the messy dust that makes them easy to put on and remove
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*sE8hMAIyh7i7YFV2JScKlA.jpeg)Nitrile gloves have no latex and are not coated in the messy dust that makes them easy to put on and remove
 
 Here’s what we’re going for. We need to accurately engrave into the wood. This means that the cut needs to be centered and oriented. If we were to just place the remote bottom side up and shove it in the corner of the work bed, the engraving would come out askew.
 
-![](/media/img/turntouch/1*DOQkCChXj2W-n-g5T6CvOA.gif)60W CO2 Universal laser cutter, sped up 40X for dramatic effect
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*DOQkCChXj2W-n-g5T6CvOA.gif)60W CO2 Universal laser cutter, sped up 40X for dramatic effect
 
 Here we can see the laser cutter do its magic. To achieve this registration and orientation of the remote in the laser cutter, we need to do the same thing we did for the CNC machine: we make a fixture.
 
@@ -548,7 +548,7 @@ Here we can see the laser cutter do its magic. To achieve this registration and 
 
 Lucky for us, this fixture is easy to make. I just took a ¼" piece of plywood and ran the laser cutter around the outline of the remote at full power to cut through. I had to adjust my offsets a bit to fit the remote, but it only took a couple tries.
 
-![](/media/img/turntouch/1*_DTbjF5WhGKrymq8VYgy6w.jpeg)This fixture gives us perfect registration and orientation for the laser cutter to accurately hit the center of the remote
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*_DTbjF5WhGKrymq8VYgy6w.jpeg)This fixture gives us perfect registration and orientation for the laser cutter to accurately hit the center of the remote
 
 The remote is sitting inside this hole. Because the laser cutter made the hole, we can just center the logo engraving (or custom inlay engraving) in the hole to ensure that we are correctly registered. The plywood fixture itself is pushed up into the top right of the work bed so that it remains in a constant location.
 
@@ -562,7 +562,7 @@ We want to start with establishing a minimum throughput that gives us the minimu
 
 Take a look below at this mahogany wood blank to see what happens when wood burns, even subtly. Starting on the right-hand side you can see how the laser cutter’s exhaust system pulls the smoke up and over the wood, leaving a burn scar above the cut.
 
-![](/media/img/turntouch/1*r0NZ_7Y2bAfbQxZVrOxjNw.jpeg)A mahogany wood blank worked right-to-left, the left-most engraving was chosen for its perfect height match with the shell
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*r0NZ_7Y2bAfbQxZVrOxjNw.jpeg)A mahogany wood blank worked right-to-left, the left-most engraving was chosen for its perfect height match with the shell
 
 Starting from right to left:
 
@@ -579,7 +579,7 @@ YMMV on your particular laser system, but this is a good way of narrowing down v
 
 When a laser cutter cuts through material, the beam diffuses and creates a sloped edge. You can see how this edge can be a problem below.
 
-![](/media/img/turntouch/1*sAlHVGYT_8_A832L6zYnPg.jpeg)
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*sAlHVGYT_8_A832L6zYnPg.jpeg)
 
 When you try to inlay the shell later, these slopes will cause the edges of the shell to sit higher than the rest of the shell. It would be very easy to crack the shell if you press it in, since it can’t handle the stress of resting on the sloped edge.
 
@@ -593,15 +593,15 @@ This is what I do and it only takes a couple extra seconds to make a few cuts at
 
 This is the good stuff. Mother of pearl is such a delicate material that it only needs a light power setting. The only variables I messed around with were power and speed, since vector cutting has no throughput component like the rasterized engraving in the wood above.
 
-![](/media/img/turntouch/1*C1nHiKmBTsrYQfzwODx5Dg.jpeg)Thin mother of pearl needs to be weighted down so it doesn’t get sucked into the exhaust fan
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*C1nHiKmBTsrYQfzwODx5Dg.jpeg)Thin mother of pearl needs to be weighted down so it doesn’t get sucked into the exhaust fan
 
 Let’s cut the inside edges of the design first. Just as you don’t want to paint yourself into a corner, you want to laser from the inside out. Otherwise your newly free-moving material may not stay in place for those inner cuts.
 
-![](/media/img/turntouch/1*eYuV2GGiNW7oeUS31lgPgQ.png)Test every inset variation to minimize the space between wood engraving and cut shell. I settled on a 0.001" inset.
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*eYuV2GGiNW7oeUS31lgPgQ.png)Test every inset variation to minimize the space between wood engraving and cut shell. I settled on a 0.001" inset.
 
 The Universal laser cutter I used allows you to set colors that applies an order to each cut. I also used a lower power setting for the outside edge cut. Since the entire square is easier to separate that the inner cut, a faster speed cut keeps the mother of pearl marginally connected so that the individual pieces don’t go flying as they get cut.
 
-![](/media/img/turntouch/1*VUDgPAwvpputKdWjRCdNrw.gif)Hot cutting action
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*VUDgPAwvpputKdWjRCdNrw.gif)Hot cutting action
 
 I could have run the laser at a higher speed (at a higher power to compensate), but I kept it at a low speed to ensure a quality cut. If the wood engraving isn’t perfect, it matters less than if the shiny shell has rough corners that become a lot more noticeable.
 
@@ -611,11 +611,11 @@ Once you’ve got the two cut materials, the wood and the shell, you’ll need t
 
 I tried many glues and settled on squeezable Extra Time Control super glue gel. The gel makes application easier, instead of being thin and runny. However, using off-the-shelf super glue (cyanoacrylate) without time control gave me only 5 seconds between application and drying. So placing the shell into the engraving was a one-shot deal, with the shell becoming permanently affixed to the wrong place if you didn’t nail its position the first time.
 
-![](/media/img/turntouch/1*lXFsR_Y3n2xLgbf9b7Xu4A.jpeg)![](/media/img/turntouch/1*JzdB3WPvhwQKzmW1yImbCQ.jpeg)![](/media/img/turntouch/1*rQbz_daEuFYq69qrSSb-2A.jpeg)Better to apply the glue to the shell than to the wood, less run-off on to the wood that way![](/media/img/turntouch/1*0WYMv5Q3UvF-qMXDUMfUTQ.jpeg)![](/media/img/turntouch/1*HlIv9goBBKicMw-qER43kA.jpeg)Place and wipe clean
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*lXFsR_Y3n2xLgbf9b7Xu4A.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*JzdB3WPvhwQKzmW1yImbCQ.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*rQbz_daEuFYq69qrSSb-2A.jpeg)Better to apply the glue to the shell than to the wood, less run-off on to the wood that way![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*0WYMv5Q3UvF-qMXDUMfUTQ.jpeg)![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*HlIv9goBBKicMw-qER43kA.jpeg)Place and wipe clean
 
 Time control or not, it’s still super glue and it adheres within 15 seconds. But because it has time control, any excess glue easily wipes off the wood with a paper towel.
 
-![](/media/img/turntouch/1*4OorUgvWI12PoDnRVWeKCg.jpeg)2 minutes of lasering per remote, 30 seconds of glueing, and you get a finished remote
+![](https://s3.amazonaws.com/static.newsblur.com/turntouch/blog/1*4OorUgvWI12PoDnRVWeKCg.jpeg)2 minutes of lasering per remote, 30 seconds of glueing, and you get a finished remote
 
 That’s it! That’s the last step. We now have a complete Turn Touch ready to ship to backers.
 
