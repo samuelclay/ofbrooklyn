@@ -4,7 +4,7 @@ title:            OfBrooklyn.com
 tagline:          "Samuel Clay's collected writings"
 description:      ""
 
-url:              http://www.ofbrooklyn.com
+url:              https://www.ofbrooklyn.com
 permalink:        :year/:month/:i_day/:title/
 timezone:         UTC
 
