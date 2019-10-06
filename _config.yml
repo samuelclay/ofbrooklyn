@@ -4,13 +4,13 @@ title:            OfBrooklyn.com
 tagline:          "Samuel Clay's collected writings"
 description:      ""
 
-url:              https://www.ofbrooklyn.com
+url:              https://ofbrooklyn.com
 permalink:        :year/:month/:i_day/:title/
 timezone:         UTC
 
 author:
   name:           'Samuel Clay'
-  url:            https://www.samuelclay.com
+  url:            http://samuelclay.com
 
 paginate:         5
 excerpt_separator: <!--more-->
