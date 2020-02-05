@@ -5,6 +5,7 @@ title: Home
 
 <div class="posts">
   {% for post in paginator.posts %}
+  {% unless post.draft %}
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url | prepend:site.github.url }}">
@@ -35,6 +36,7 @@ title: Home
         <a href="{{ post.url | prepend:site.github.url }}">Continue reading <span class="post-continuation">{{ post.title }}</span> ({{ post.content | number_of_words | thousands_separated }} words)...</a>
     {% endif %}
   </div>
+  {% endunless %}
   {% endfor %}
 </div>
 
