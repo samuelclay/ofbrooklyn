@@ -14,7 +14,7 @@ I moderated a panel on micromobility at the annual [Moving the Future Conference
 
 We discussed the potential for micromobility, the cannibalization of walking and transit usage, aggregation of micromobility vehicles, and what the future of the vehicle looks like. Here’s all the good stuff and memorable lines from the 40 minute conversation.
 
-<img src="/media/photos/moving-the-future-micromobility.jpg" width="500">
+<img src="/media/photos/micromobility-mtf.jpg" width="500">
 
 We had:
  - [<span class="mm-name mm-matt ">Matt Warfield</span>]([https://www.linkedin.com/in/mattwarfield]), a new mobility planner with the City of Boston Transportation Department
