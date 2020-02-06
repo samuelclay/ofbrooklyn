@@ -2,7 +2,7 @@
 layout: post
 draft: true
 title: "Recap and takeaways of the Micromobility panel at Moving the Future 2020"
-date: '2020-02-04T04:20:00+00:00'
+date: '2020-02-06T04:20:00+00:00'
 redirect_from:
   - /micromobility
   
@@ -14,13 +14,14 @@ I moderated a panel on micromobility at the annual [Moving the Future Conference
 
 We discussed the potential for micromobility, the cannibalization of walking and transit usage, aggregation of micromobility vehicles, and what the future of the vehicle looks like. Here’s all the good stuff and memorable lines from the 40 minute conversation.
 
-<img src="/media/photos/micromobility-mtf.jpg" width="500">
+<img src="/media/photos/micromobility-panel-2.jpg" width="500">
 
-We had:
+The micromobility panel includes, in order from left to right:
  - [<span class="mm-name mm-matt ">Matt Warfield</span>]([https://www.linkedin.com/in/mattwarfield]), a new mobility planner with the City of Boston Transportation Department
 - [<span class="mm-name mm-tarani ">Tarani Duncan</span>]([https://twitter.com/TaraniDuncan]), a product strategist and advisor to pioneering autonomous micromobility company Tortoise and spatial analytics company Zoba
 - [<span class="mm-name mm-assaf ">Assaf Biderman</span>]([https://www.linkedin.com/in/assaf-biderman-751b135a]), CEO and founder of Superpedestrian, a robotics company building the next wave of intelligent and connected micromobility vehicles
 - [<span class="mm-name mm-andrew ">Andrew Salzberg</span>]([https://twitter.com/andrewsalzberg]), former head of transportation policy and research at Uber and current Loeb fellow at the Graduate School of Design at Harvard
+- [<span class="mm-name mm-sam ">Samuel Clay</span>]([https://twitter.com/samuelclay]), moderator and graduate student in design engineering
 
 **Do you see micromobility moving a meaningful chunk of drivers out of cars?**
 - <span class="mm-andrew "></span> With cars, putting them on the road with phones was enough to create demand. But with bikes, putting thousands on the road doesn’t have the same effect because demand depends on the design of streets. Obvious to bike advocates but not so much to the rental fleet companies.
@@ -55,7 +56,7 @@ We had:
 
 **What does the future of the vehicle look like? There’s quite a few changes that have happened since the gen 1 scooters, and now gen 3 is deployed and we’re talking about gen 4 and its cognitive abilities. What does adding onboard intelligence imply and what does that opportunity look like?**
 - <span class="mm-assaf"></span>If you look at the industry today, there’s no gen 1, gen 2, or gen 3s. They are all gen 1. Scooters today are basically technology from the 70s, with their extruded aluminum and L shapes. Micromobility will have many different shapes depending on the distance and the task and also on the shape of the city. Mechanical improvements take you only so far. 
-- <span class="mm-assaf"></span>For personal vehicles, you’re going to take care of it to a certain extend. If the brakes are not working, you’re going to take it into service. You’re going to ensure the battery is charged. Once you deploy vehicles in the streets, that equation is broken because you’ll need as many caretakers as riders. It doesn’t scale up. At the same time, you have a much higher utilization of the asset. 
+- <span class="mm-assaf"></span>For personal vehicles, you’re going to take care of it to a certain extent. If the brakes are not working, you’re going to take it into service. You’re going to ensure the battery is charged. Once you deploy vehicles in the streets, that equation is broken because you’ll need as many caretakers as riders. It doesn’t scale up. At the same time, you have a much higher utilization of the asset. 
 - <span class="mm-assaf"></span> So the only way to take care of the problem is to automate inspection and have the service quality be a lot higher. So the vehicle needs to be able to ask itself before every ride: am I safe to ride? are the battery cells all connected? am I in the right temperature range? are the brakes working? If the vehicle can do that, and [our vehicles do that](https://superpedestrian.com), that’s when we’ll see higher safety levels and lower costs. Otherwise we won’t be able to make money on this and companies won’t be able to survive.
 - <span class="mm-tarani"></span> There’s a classic mistake in transportation which is over-capitalization and lack of investment in maintaining what we’ve built. We can see that in the $5 billion invested into micromobility to date. Sensors, telematics, and maintenance data that you can grab from the vehicle remotely is all interesting. 
 - <span class="mm-tarani"></span> The push ahead of autonomy is about generating a return for a vehicle even with all of its wear parts. Those wear parts, such as brake pads or a bell or a light, are designed for ease of maintenance. And a big problem area is simply getting the earned revenue to be more than the cost to buy it and maintain it. 
@@ -63,6 +64,10 @@ We had:
 - <span class="mm-assaf"></span> Telematics is too little too late. Knowing that a vehicle is broken somewhere in the field is not as good as preventative measures to protect itself in real-time. We’ve been able to deploy automation that prevents fires. 
 - <span class="mm-assaf"></span> But vehicles fail more often than you realize. And if you’re next to a car and your vehicle is not stable, this is a major safety concern. And then cost follows, whereas when 20% of vehicles failing switches to 5%, it changes your model completely.
 {: .mm}
+
+<img src="/media/photos/micromobility-mtf.jpg" width="500">
+
+Thanks to our four panelists and to Horace Dediu and Chase Stubblefield for keynoting the conference. You can follow each of us on Twitter to stay up to date on micromobility news and opinion: [@TaraniDuncan](https://twitter.com/TaraniDuncan), [@andrewsalzberg](https://twitter.com/andrewsalzberg), [@superpedstrian](https://twitter.com/superpedestrian), [@chasestubb](https://twitter.com/chasestubb), [@asymco](https://twitter.com/asymco), and [@samuelclay](https://twitter.com/samuelclay).
 
 <style>
 .mm li {
@@ -97,5 +102,8 @@ border-radius: 4px;
 }
 .mm-matt {
   background-color: #e8d7d1;
+}
+.mm-sam {
+  background-color: #e8e3d1;
 }
 </style>
