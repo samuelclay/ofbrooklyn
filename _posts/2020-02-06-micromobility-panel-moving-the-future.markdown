@@ -101,7 +101,7 @@ border-radius: 4px;
   background-color: #dfd1e8;
 }
 .mm-matt {
-  background-color: #e8d7d1;
+  background-color: #e8d1d1;
 }
 .mm-sam {
   background-color: #e8e3d1;
