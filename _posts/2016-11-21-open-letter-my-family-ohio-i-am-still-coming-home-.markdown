@@ -12,7 +12,7 @@ This was going to be an awkward year for us from the start. Thanksgiving is norm
 
 Before the election, I thought the greatest thing that would divide our dinner table would be my recently adopted vegetarianism. But us Jews are all about dietary restrictions. Eight breadless days of weight loss every year during Passover. Fasting from food and water every year for the day of atonement. Two sets of plates for Shabbat and for everyday. I was certain that refusing meat wouldn’t stop me from feeling embraced and loved at the table.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/open-letter-dinner.jpeg" style="width: 650px; margin: 0 auto;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/open-letter-dinner.jpeg" style="width: 650px; margin: 0 auto;">
 ###### A russian salad feast courtesy of my friend Andrey Petrov
 
 But then last week you voted for Trump. Jewish refugees from the Ukraine now living in Ohio voted for Trump. You have told me several times that Obama is the worst president in our lifetime. And so you voted for Trump.

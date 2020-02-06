@@ -15,17 +15,17 @@ Grove is a <a href="http://burningman.org/culture/history/art-history/archive/#G
 
 Here's how Grove works: you sit down at the base of a tree and a flower opens up in front of you as it senses your presence. As you breathe into a pink flower lit from inside, the tree fills up with your breath, rising white streams overtaking multiple slowly descending green lines. As you breathe, the tree shimmers with light as it becomes a nighttime desert oasis.
 
-<video src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/Grove.mp4" autoplay loop muted></video>
+<video src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/Grove.mp4" autoplay loop muted></video>
 
 This post offers details on how this installation was built, from the custom circuit boards to the blooming flower and breathing sensors. You can access <a href="https://github.com/samuelclay/Grove">the complete source for Grove on GitHub</a>.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-breathing-nighttime.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-breathing-nighttime.jpg">
 
 Grove is made up of ten trees, each of which has its own breath sensor and set of two thousand LEDs across four 5 meter 144 LEDs/meter LED strips and 16 high current LEDs in the leaves. That takes both a lot of power to run and a lot of manpower to setup. This is what that setup looks like.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-build-wide.JPG">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-build-wide.JPG">
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-party-dancing.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-party-dancing.jpg">
 
 <h6>This photo and a few others below are by <a href="https://www.facebook.com/laurel.daily">Daily Swa Laurel</a></h6>
 
