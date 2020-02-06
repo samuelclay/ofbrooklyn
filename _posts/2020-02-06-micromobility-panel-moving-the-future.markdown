@@ -17,11 +17,11 @@ We discussed the potential for micromobility, the cannibalization of walking and
 <img src="/media/photos/micromobility-panel-2.jpg" width="500">
 
 The micromobility panel includes, in order from left to right:
- - [<span class="mm-name mm-matt ">Matt Warfield</span>]([https://www.linkedin.com/in/mattwarfield]), a new mobility planner with the City of Boston Transportation Department
-- [<span class="mm-name mm-tarani ">Tarani Duncan</span>]([https://twitter.com/TaraniDuncan]), a product strategist and advisor to pioneering autonomous micromobility company Tortoise and spatial analytics company Zoba
-- [<span class="mm-name mm-assaf ">Assaf Biderman</span>]([https://www.linkedin.com/in/assaf-biderman-751b135a]), CEO and founder of Superpedestrian, a robotics company building the next wave of intelligent and connected micromobility vehicles
-- [<span class="mm-name mm-andrew ">Andrew Salzberg</span>]([https://twitter.com/andrewsalzberg]), former head of transportation policy and research at Uber and current Loeb fellow at the Graduate School of Design at Harvard
-- [<span class="mm-name mm-sam ">Samuel Clay</span>]([https://twitter.com/samuelclay]), moderator and graduate student in design engineering
+ - <span class="mm-name mm-matt ">[Matt Warfield](https://www.linkedin.com/in/mattwarfield)</span>, a new mobility planner with the City of Boston Transportation Department
+- <span class="mm-name mm-tarani ">[Tarani Duncan](https://twitter.com/TaraniDuncan)</span>, a product strategist and advisor to pioneering autonomous micromobility company Tortoise and spatial analytics company Zoba
+- <span class="mm-name mm-assaf ">[Assaf Biderman](https://www.linkedin.com/in/assaf-biderman-751b135a)</span>, CEO and founder of Superpedestrian, a robotics company building the next wave of intelligent and connected micromobility vehicles
+- <span class="mm-name mm-andrew ">[Andrew Salzberg](https://twitter.com/andrewsalzberg)</span>, former head of transportation policy and research at Uber and current Loeb fellow at the Graduate School of Design at Harvard
+- <span class="mm-name mm-sam ">[Samuel Clay](https://twitter.com/samuelclay)</span>, moderator and graduate student in design engineering
 
 **Do you see micromobility moving a meaningful chunk of drivers out of cars?**
 - <span class="mm-andrew "></span> With cars, putting them on the road with phones was enough to create demand. But with bikes, putting thousands on the road doesn’t have the same effect because demand depends on the design of streets. Obvious to bike advocates but not so much to the rental fleet companies.
