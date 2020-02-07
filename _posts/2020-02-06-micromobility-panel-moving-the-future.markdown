@@ -1,6 +1,5 @@
 ---
 layout: post
-draft: true
 title: "Recap and takeaways of the Micromobility panel at Moving the Future 2020"
 date: '2020-02-06T04:20:00+00:00'
 redirect_from:
