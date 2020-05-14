@@ -21,9 +21,7 @@ redirect_from:
 <ul>
   <li>We can decide what our new normal looks like</li>
   <li>Resilience now a necessary goal for cities</li>
-  <li>Climate goals</li>
-  <li>Clean air goals</li>
-  <li>Energy usage</li>
+  <li>Climate goals, clean air goals, energy usage</li>
   <li>Transportation is 30% of emissions, largest share of all industries</li>
   <li>The 20th C. has asked how many cars can we move down the street</li>
   <li>The 21st C. should ask how many people can we move down the street</li>
@@ -52,15 +50,18 @@ redirect_from:
 
 <img src="/media/photos/comfortmaps/Comfort Maps IDEP Final.005.jpg" width="100%">
 
+Sharrows
 <ul>
-  <li>Sharrows</li>
   <li>These are paint, in the middle of the lane</li>
   <li>This is a signal to cars</li>
   <li>According to some 2011 research done here in Cambridge, a sharrow is worth 15”</li>
+  <li>Cameras pointed at an intersection, two weeks before, two weeks after installing sharrow</li>
+  <li>On average, cars gave 15" additional space to cyclists. That's not nothing.</li>
 </ul>
 
 <img src="/media/photos/comfortmaps/Comfort Maps IDEP Final.006.jpg" width="100%">
 
+Traditional bike lanes
 <ul>
   <li>Protection is bounded by the mindfulness of drivers beside you</li>
   <li>It’s just paint. </li>
@@ -69,6 +70,7 @@ redirect_from:
 
 <img src="/media/photos/comfortmaps/Comfort Maps IDEP Final.007.jpg" width="100%">
 
+Protected bike lanes
 <ul>
   <li>A PBL is the gold standard</li>
   <li>This is a barrier, whether it’s bollards, or stanchions, or plants, and even parked cars</li>
