@@ -22,6 +22,11 @@ The micromobility panel includes, in order from left to right:
 - <span class="mm-name mm-andrew ">[Andrew Salzberg](https://twitter.com/andrewsalzberg)</span>, former head of transportation policy and research at Uber and current Loeb fellow at the Graduate School of Design at Harvard
 - <span class="mm-name mm-sam ">[Samuel Clay](https://twitter.com/samuelclay)</span>, moderator and graduate student in design engineering
 
+
+<!--more-->
+
+* * *
+
 **Do you see micromobility moving a meaningful chunk of drivers out of cars?**
 - <span class="mm-andrew "></span> With cars, putting them on the road with phones was enough to create demand. But with bikes, putting thousands on the road doesn’t have the same effect because demand depends on the design of streets. Obvious to bike advocates but not so much to the rental fleet companies.
 - <span class="mm-tarani "></span> Operators are thought to posses all these tools to robustly calculate demand but that is not the case and this is a huge problem that needs to be solved. Spatial analytics are a huge part of making micromobility work as a tool for trip planning and that’s going to take time to build. 
