@@ -6,7 +6,7 @@ title: Home
 <div class="posts">
   {% for post in paginator.posts %}
   {% unless post.draft %}
-  <div class="post">
+  <div class="post {{ post.class }}">
     <h1 class="post-title">
       <a href="{{ post.url | prepend:site.github.url }}">
         {{ post.title }}
