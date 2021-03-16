@@ -12,9 +12,9 @@ redirect_from:
 
 This was my second year attending Burning Man. Many use Burning Man as a week to detach from their workweek and experience a new life of intense leisure. Not me, I come to Burning Man to build.
 
-Pulse & Bloom is a [2014 honorarium installation](http://www.burningman.com/installations/art_honor.html). The core team of 6 people — [Saba Ghole](https://twitter.com/sabarani), [Shilo Shiv Suleman](https://twitter.com/shilo1221), [Rohan Dixit](https://twitter.com/rd108), [Heather Stewart](https://www.facebook.com/heather.stewart.3388), [Luke Iseman](https://twitter.com/liseman), and [myself](http://twitter.com/samuelclay) — built 20 interactive lotus flowers made out of steel and rowlux. Each lotus flower ranges from 8 to 18 feet tall, each of which lights up with your pulse. You and another person can put your hands on a couple of Hamsa hands at the base of the lotus flower and your respective heartbeats will light up the flower.
+Pulse & Bloom is a [2014 honorarium installation](https://www.burningman.com/installations/art_honor.html). The core team of 6 people — [Saba Ghole](https://twitter.com/sabarani), [Shilo Shiv Suleman](https://twitter.com/shilo1221), [Rohan Dixit](https://twitter.com/rd108), [Heather Stewart](https://www.facebook.com/heather.stewart.3388), [Luke Iseman](https://twitter.com/liseman), and [myself](https://twitter.com/samuelclay) — built 20 interactive lotus flowers made out of steel and rowlux. Each lotus flower ranges from 8 to 18 feet tall, each of which lights up with your pulse. You and another person can put your hands on a couple of Hamsa hands at the base of the lotus flower and your respective heartbeats will light up the flower.
 
-We've gotten some great press coverage at [the BBC](http://www.bbc.com/news/in-pictures-29059374), [The Guardian](http://www.theguardian.com/artanddesign/gallery/2014/sep/06/photography-new-york-fashion-gaza-islamic-state?CMP=fb_gu), [The Atlantic's Big Picture](http://www.theatlantic.com/infocus/2014/09/burning-man-2014/100802/#img07) [twice](http://www.theatlantic.com/infocus/2014/09/burning-man-2014/100802/#img22), [CBS News](http://www.cbsnews.com/pictures/burning-man-2014/9/), [NBC News](http://www.nbcnews.com/pop-culture/pop-culture-news/desert-dwellers-burning-man-festival-full-swing-n192541#ember903), and [MSNBC](http://on.msnbc.com/1qkUN4c).
+We've gotten some great press coverage at [the BBC](https://www.bbc.com/news/in-pictures-29059374), [The Guardian](https://www.theguardian.com/artanddesign/gallery/2014/sep/06/photography-new-york-fashion-gaza-islamic-state?CMP=fb_gu), [The Atlantic's Big Picture](https://www.theatlantic.com/infocus/2014/09/burning-man-2014/100802/#img07) [twice](https://www.theatlantic.com/infocus/2014/09/burning-man-2014/100802/#img22), [CBS News](https://www.cbsnews.com/pictures/burning-man-2014/9/), [NBC News](https://www.nbcnews.com/pop-culture/pop-culture-news/desert-dwellers-burning-man-festival-full-swing-n192541#ember903), and [MSNBC](https://on.msnbc.com/1qkUN4c).
 
 As usual, the [complete source code for Pulse & Bloom is on GitHub](https://github.com/samuelclay/pulse-bloom).
 
@@ -22,13 +22,13 @@ As usual, the [complete source code for Pulse & Bloom is on GitHub](https://gith
 
 Here are a couple videos of all twenty lotus flowers in full working order.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20and%20Bloom%2036b.gif" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20and%20Bloom%2036b.gif" width="650">
 
-<video src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom.mp4" autoplay loop muted width="650"></video>
+<video src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom.mp4" autoplay loop muted width="650"></video>
 
 Each lotus flower is blue until a person or two sits down at its base and places their hand on the pulse sensor. You can see the Hamsa hand and its embedded pulse sensor in this shot of my girlfriend Brittany and me working on keeping the electronics going.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Glue%20Gun.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Glue%20Gun.jpg" width="650">
 <h6>Photo credit Jim Urquhart / Reuters</h6>
 
 When a pulse is read, the lotus flower shoots the heartbeat up the stem and into the petals, where it blooms in a brilliant display of amber. When two people's hands are being measured, both of their heartbeats are shown as two distinct colors.
@@ -61,27 +61,27 @@ Lastly, the two pulse sensors terminate their I2C wires directly on the board. I
 
 All of these terminations are made using 2.5mm and 3.5mm pitch screw terminals. In hindsight I would have used female JST-SM mounted connectors and ordered custom wires with JST-SM male connectors. I assumed the lowest common denomenator would be bare tinned wire, but all of the bare wires could easily have been switched over to polarized, latching connectors. This would have reduced over 90% of the field work I had to perform on boards, as their wire would fall out of the screw terminals due to not being screwed in with enough force.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20board%20schematic.png" width="650" class="no-border">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20board%20schematic.png" width="650" class="no-border">
 
 The board was laid out to be as big as a pack of gum. All of the 12V traces are thickened and isolated on the right side of the board. They are rated for 3 amps although they would end up only driving 1 amp on the playa.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20board%20layout.png" width="650" class="no-border">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20board%20layout.png" width="650" class="no-border">
 
 These boards are then stenciled with solder paste and populated with their chips and passive components.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Soldering%20boards.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Soldering%20boards.jpg" width="650">
 
 An inexpensive hot plate is used to reflow the solder. The chip is in a TQFP package, which has a 0.5mm pitch between pins. This makes it nearly impossible to hand solder. This stencil and reflow technique works well and my yield stayed high at around 95%.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Reflowing%20boards.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Reflowing%20boards.jpg" width="650">
 
 Finally, the board is ready to be populated with screw terminals.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Naked%20Board.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Naked%20Board.jpg" width="650">
 
 The final board in a dust-proof enclosure.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20enclosure.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20enclosure.jpg" width="650">
 
 <a name="sensors"></a>
 
@@ -95,23 +95,23 @@ This was both the riskiest piece of the puzzle and also the most fun to build. I
 
 The first prototype I built suffered from the design affordance and reliability issues, although it worked pretty well in ideal conditions.
 
-<video src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Sensor%20opamp.mp4" autoplay loop muted width="650"></video>
+<video src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Sensor%20opamp.mp4" autoplay loop muted width="650"></video>
 
 We ended up finding an IC by Silicon Labs called the Si114x, which uses three LEDs — two infrared and one visible — and a small QFN-10 sized light sensor. The original sensor we used was the [Modern Device](http://www.moderndevice.com) [pulse sensor](http://moderndevice.com/product/pulse-heartbeat-sensor/), which also provided firmware and ideas for a board layout. The folks at Modern Device were kind enough to [offer advice on how they built their sensor](http://moderndevice.com/documentation/using-the-pulse-sensor/) and about how to fix the infrared LED issues we hit. I owe them beers for saving me from many more excruciating hours of trying to build sensors that don't sense.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20sensor%20schematic.png" width="650" class="no-border">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20sensor%20schematic.png" width="650" class="no-border">
 
 I built out a small PCB the size of a fingertip.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20sensor%20layout.png" width="650" class="no-border">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20sensor%20layout.png" width="650" class="no-border">
 
 This tiny IC is a bit tricky to solder as it has no leads and the pins are extremely close together. My yield dropped to about 80%, but 4 out of every 5 pulse sensors I built worked perfectly the first time. If they failed, I would remount them on the hot plate and try wicking away any solder bridges I could find. This worked only about half the time. After that I gave up and now have a plastic cup full of broken pulse sensors.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Reflowing%20sensors.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Reflowing%20sensors.jpg" width="650">
 
 Finally the sensor is hooked up and a tiny red light is emitted, letting people know where to put their fingers.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Sensor.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Sensor.jpg" width="650">
 
 <a name="leds"></a>
 
@@ -121,7 +121,7 @@ What turned these lotuses from flowers into gems are the high current LEDs mount
 
 If you were to look at one of these LEDs from a few feet away, you would immediately see spots in your eyes. They are extremely bright pinpoints of light. The fact that they are also full color and need a heatsink due to their brightness means that you won't just find these in an easy package ready for plugging in.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Night.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Night.jpg" width="650">
 <h6>Photo credit Jim Urquhart / Reuters</h6>
 
 Normally a single LED is powered by a single constant current driver. This driver can drive up to 1A of current at 12V. Because we were only using a single channel of color (blue) in the rest state, which is where the lotus spent most of its time, we could triple the number of LEDs driven by a single constant current driver. 
@@ -130,20 +130,20 @@ When in use the petals glow amber, which uses two channels (100% red, 50% green)
 
 Using a Chinese distributor, we bought these Sparkfun high current LEDs for $0.86 each instead of the full $15. However, we also bought 80 of Sparkfun's PicoBucks to use as our constant current driver. While we could have built this ourselves to save money, buying 80 of something at $15 each is still only $1.2k, while building them ourselves would only have saved a few hundred dollars.
 
-<a href="https://www.sparkfun.com/products/8718"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20LEDs.jpg" width="300" class="small no-border"></a>
-<a href="https://www.sparkfun.com/products/11850"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20PicoBuck.jpg" width="300"  class="small no-border" style="margin-right: 0;"></a>
+<a href="https://www.sparkfun.com/products/8718"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20LEDs.jpg" width="300" class="small no-border"></a>
+<a href="https://www.sparkfun.com/products/11850"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20PicoBuck.jpg" width="300"  class="small no-border" style="margin-right: 0;"></a>
 
 We bought 200 high current LEDs, all of which had to have their 6 anode and cathode connections soldered.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Soldering%20leds.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Soldering%20leds.jpg" width="650">
 
 In order to connect 9 high current LEDs to the board, we need to drive them in groups of three. Each group has 6 connections: red, green, blue anodes, and red, green, blue cathodes. The wiring diagram for this setup can get a bit rats nesty, but the end result was fairly easy to work with, as the picobuck groups didn't cross.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Petal%20LEDs%20wiring.png" width="650" class="no-border">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Petal%20LEDs%20wiring.png" width="650" class="no-border">
 
 Finally, a shot of a complete picobuck with the wire connectors in the background.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20wired%20picobuck.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20wired%20picobuck.jpg" width="650">
 
 <a name="firmware"></a>
 
@@ -232,7 +232,7 @@ First, in order to figure out how big of a battery we needed, we had to measure 
 
 Twenty lotuses at 1A at 12V meant we needed 240Ah to sustain a 12 hour night. A car battery was recommended, but car batteries can only discharge down to 80% without irreparable harm. However, a marine deep-cycle battery can go down to 20% without harm. 
 
-<a href="http://www.lifelinebatteries.com/marineflyer.php?id=6"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20battery.jpg" width="300" class="no-border"></a>
+<a href="http://www.lifelinebatteries.com/marineflyer.php?id=6"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20battery.jpg" width="300" class="no-border"></a>
 
 This 150 lb. battery has enough capacity, although we ended up adding a couple 6V batteries in series (to boost them to 12V) and then running them in parallel to offset some of the load.
 
@@ -248,17 +248,17 @@ At the end of each night we had to bike out with a trike and carry all 300 lbs. 
 
 Back at American Steel in Oakland, the lotus stems, bases, and petals were ready to be hooked up. These twenty lotus stems were bent by Heather. They range from 6ft to 16ft in length and each weighs 50 lbs.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Raw%20Stems.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Raw%20Stems.jpg" width="650">
 
 Such a heavy stem needs a larger base and heavy anchors to stay upright in the wind.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Base.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Base.jpg" width="650">
 
 We placed the lily pad over the base to cover it up and then added all of the electronics. Lights, sensors, and circuit boards all had to be mounted.
 
 This is a photo of our first complete lotus flower. Just compare its sheer size to Shilo.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20First%20prototype.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20First%20prototype.jpg" width="650">
 
 Once we were confident that one lotus would successfully light we left the other 19 lotuses packed away for assembly on the playa.
 
@@ -266,25 +266,25 @@ Once we were confident that one lotus would successfully light we left the other
 
 We drove out in the biggest rental car I could get my hands on. Our minivan is full of electronics, bicycles, tents, costumes, coolers full of fruit and veggies, dry snacks, and water.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Van.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Van.jpg" width="650">
 
 Since we were early arrival, they give you these red bracelets. They say *Work hard, don't do stupid shit*.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Bracelet.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Bracelet.jpg" width="650">
 
 The boards would accumulate dust on them everyday. Our plastic enclosures turned out to be too big for the holes we made in the platform. So we ended up using ziploc bags. These baggies stayed attached, but the only reason they didn't cause any issues is that the boards worked just fine in the dust, as you can see here. 
 
 If dust was a real problem for the boards, then I would have spent a whole lot more time making a tight fitting enclosure and a hole for it that protects it both from the elements and from people.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Dusty%20Board.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Dusty%20Board.jpg" width="650">
 
 The playa gets covered in dust storms regularly throughout the week. A particularly nasty dust storm is pictured here, eating our poor lotus flowers alive.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Dust.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Dust.jpg" width="650">
 
 Although during the day when its not dust storming the lotuses offer a cozy respite from the heat of the playa. 
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Day.jpg" width="650">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Day.jpg" width="650">
 <h6>Photo credit Jim Urquhart / Reuters</h6>
 
 The entire process lasted 4 months with 2.5 months of nearly full-time work on my part. I'm thrilled that I get to open-source both the process and the firmware. I hope others who build art installations can use some of my lessons learned here. I'm happy to [answer any questions on Twitter](https://twitter.com/samuelclay).
