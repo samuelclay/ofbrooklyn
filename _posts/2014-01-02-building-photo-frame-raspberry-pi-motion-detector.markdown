@@ -24,7 +24,7 @@ redirect_from:
 
 Every hardware hacker has a start, and this one is mine. [My girlfriend](http://twitter.com/brittanymorgan) bought me a [Raspberry Pi](http://raspberrypi.org) for my birthday, and so I became determined to build something with it for her birthday two months later.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
 
 As you can see above, I built a photo frame that has a few interesting parts. For one, the software which runs the photo frame, which I explore below, keeps the photos fresh from Instagram and Flickr. It then displays a random photo for a configurable six seconds. Secondly, there is a motion detector, built using a PIR sensor, which only turns the monitor on when somebody walks by.
 
@@ -40,19 +40,19 @@ I chose to use a Raspberry Pi for its simple wifi integration so that photos cou
 
 Connecting the monitor was also trivial on a Raspberry Pi, where an Arduino, Maple, or Beagle Bone would require sourcing a connection between the monitor's composite input and an output from the device.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Raspberry%20Pi.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%20Raspberry%20Pi.jpg">
 
 ###### [Raspberry Pi](http://www.adafruit.com/products/1344), $29 on Adafruit.
 
 Make note of the fact that you actually don't see any of my connections on the top of the board (pictured below). In the below photo, where the Raspberry Pi is flipped vertically to show off the electrical connections, the monitor's composite cable and the motion detecting PIR sensor's red wires are soldered underneath. 
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/blog/Raspberry%20Pi%20Backside.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/blog/Raspberry%20Pi%20Backside.jpg">
 
 This way the photo frame looks cleaner. If I had connected the monitor using the yellow composite cable, it would have to be with a male-to-male composite adapter, since both the Raspberry Pi and the monitor have a male RCA connection. This would jut out about 2 inches below the device, resulting in a messy look for the frame.
 
 ### 3.5" LCD Monitor
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%203.5%20lcd.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%203.5%20lcd.jpg">
 
 ###### [3.5" LCD Monitor](http://www.adafruit.com/products/913), $45 on Adafruit
 
@@ -62,9 +62,9 @@ There are a number of different sized LCD monitors:
 
 <table class="rpi-lcd">
     <tr>
-        <td><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%201.5%20lcd.jpg"></td>
-        <td><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%202%20lcd.jpg"></td>
-        <td><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%202.5%20lcd.jpg"></td>
+        <td><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%201.5%20lcd.jpg"></td>
+        <td><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%202%20lcd.jpg"></td>
+        <td><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%202.5%20lcd.jpg"></td>
     </tr>
     <tr>
         <td><h6><a href="http://www.adafruit.com/products/910">1.5" LCD</a>, $40</h6></td>
@@ -74,9 +74,9 @@ There are a number of different sized LCD monitors:
 </table>
 <table class="rpi-lcd">
     <tr>
-        <td><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%204.3%20lcd.jpg"></td>
-        <td><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%207%20lcd.jpg"></td>
-        <td><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%2010%20lcd.jpg"></td>
+        <td><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%204.3%20lcd.jpg"></td>
+        <td><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%207%20lcd.jpg"></td>
+        <td><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%2010%20lcd.jpg"></td>
     </tr>
     <tr>
         <td><h6><a href="http://www.adafruit.com/products/946">4.3" LCD</a>, $50</h6></td>
@@ -90,7 +90,7 @@ There are a number of different sized LCD monitors:
 ### 4GB SD Card with Raspbian (Raspberry Pi + Debian)
 
 <div class="rpi-image-float">
-    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20SD%20Card.jpg" width="200">
+    <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%20SD%20Card.jpg" width="200">
     <h6><a href="http://www.adafruit.com/products/1121">4GB SD Card</a>, $10 on Adafruit</h6>
 </div>
 
@@ -101,7 +101,7 @@ This tiny SD card comes pre-loaded with Raspbian. If you prefer to use your own 
 ### Miniature Wifi on USB
 
 <div class="rpi-image-float">
-    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Wifi.jpg" width="200">
+    <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%20Wifi.jpg" width="200">
     <h6><a href="http://www.adafruit.com/products/814">USB Wifi</a>, $11 on Adafruit</h6>
 </div>
 
@@ -112,7 +112,7 @@ Unless you're planning to use an ugly ethernet cable, this tiny wifi USB device 
 ### Passive Infrared Motion Sensor
 
 <div class="rpi-image-float">
-    <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20PIR.jpg" width="200">
+    <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%20PIR.jpg" width="200">
     <h6><a href="http://www.adafruit.com/products/189">PIR sensor</a>, $10 on Adafruit</h6>
 </div>
 
@@ -316,11 +316,11 @@ By default, the image won't stretch to the edges of your monitor without cajolin
 
 Here's the before photo:
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/blog/Raspberry%20Pi%20Photo%20Frame.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/blog/Raspberry%20Pi%20Photo%20Frame.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
 
 And here's with margin correction on the monitor: 
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/RPi%20-%20Photo%20Frame%20corrected.jpg" style="border: 1px solid #303030; margin: 0 0 24px;">
 
 To fix this, take a look at using <a href="http://elinux.org/RPiconfig">RPiconfig</a>. All you need to do is edit `/boot/config.txt` directly on the Raspberry Pi. The values you need to set are:
 

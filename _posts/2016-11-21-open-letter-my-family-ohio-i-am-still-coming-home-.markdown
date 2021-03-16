@@ -23,7 +23,7 @@ This letter would not have been written if this were just about politics. Both o
 
 Voting for Trump is clearly a vote for hate. I know you voted against Hillary, and not “in favor” of Trump, but the action is the same. Your vote signals to me that you see our fellow citizens as less than human. History shows where this leads and history is not just words in a textbook for us. You are choosing to ignore our past.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/open-letter-baby-jews.jpeg" style="width: 650px; margin: 0 auto;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/open-letter-baby-jews.jpeg" style="width: 650px; margin: 0 auto;">
 ###### [Donald Trump Says He’d ‘Absolutely’ Require Muslims to Register](http://www.nytimes.com/politics/first-draft/2015/11/20/donald-trump-says-hed-absolutely-require-muslims-to-register/)
 
 We would have seven times as many cousins if it weren’t for the Nazis. You helped elect a fascist and are now complicit in what’s going to happen to families both in and outside of our country.
@@ -31,8 +31,8 @@ We would have seven times as many cousins if it weren’t for the Nazis. You hel
 It is not unreasonable for people to think that fascists, if given power and an attempt to govern, will moderate their views. But history repeats itself.
 
 <div style="overflow: hidden">
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/open-letter-hitler-1.jpeg" style="float: left; width: 260px; margin-right: 24px;">
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/open-letter-hitler-2.jpeg" style="float:right; width: 320px;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/open-letter-hitler-1.jpeg" style="float: left; width: 260px; margin-right: 24px;">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/open-letter-hitler-2.jpeg" style="float:right; width: 320px;">
 </div>
 
 <blockquote>“Several reliable, well-informed sources confirmed the idea that Hitler’s anti-Semitism was not so genuine or violent as it sounded, and that he was merely using anti-Semitic propaganda as a bait to catch masses of followers and keep them aroused, enthusiastic, and in line for the time when his organization is perfected and sufficiently powerful to be employed effectively for political purposes.”

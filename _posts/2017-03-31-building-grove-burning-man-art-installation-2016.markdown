@@ -49,27 +49,27 @@ These are five stages to making the electronics work together:
 
 First things first, we need to focus on how to design a breathing sensor. 
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-flower-breathe.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-flower-breathe.jpg">
 
 #### The plastic lotus flower assembly
 
 This is the plastic lotus flower assembly built and designed by <a href="https://cambridge.nuvustudio.com/studios/long-term-projects/grove-burning-man#tab-portfolio-url">the NuVu team in Boston</a>. It is supported by a 3 foot gooseneck that is tied to the base of the tree. This allows the person sitting down by the tree to pull the flower, that at this point is lit up and has magically opened itself, over to their mouth.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-flower-open.png">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-flower-open.png">
 
 We placed a pair of <a href="https://www.adafruit.com/product/189">passive IR motion sensors</a> a few feet up the base of the tree looking out on both sides to detect when somebody sits down. That signal then directs the servo motor in the flower to open the flower up and make the LEDs inside the flower pulsate. This beckons the person to pull the flower over to them.
 
 The flower has a proximity sensor embedded inside that is more commonly used by paper towel dispensers to detect hand movement. We used the [Si1143](https://moderndevice.com/product/si1143-proximity-sensors/), same as in <a href="http://www.ofbrooklyn.com/2014/09/6/building-pulse-bloom-biofeedback-burning-man-2014/#sensors">the pulse sensor in Pulse &amp; Bloom</a>, to detect proximity. When we detect that a person is positioned directly in front of the flower, we then allow the breath measurements to light up the tree. Otherwise wind would take over and the tree would be constantly lit.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/prototyping-sensor.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/prototyping-sensor.jpg">
 
 Above you can see the board that is placed inside the flower. There is a trumpet that fits directly over the board and directs airflow over the board. There are two slots in the board that allow your breath to flow over the hot-wire thermistors and out the back of the flower. Otherwise when you breathed into the flower, the flower would send your last breath back out.
 
-<a href="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-pcb-sensor.png"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-pcb-sensor.png"></a>
+<a href="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-pcb-sensor.png"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-pcb-sensor.png"></a>
 
 The sensor board and the main board are driven and controlled by their own Teensy 3.2. I cannot say enough good things about the Teensy. We originally used an 8-bit Arduino Uno compatible ATmega328p chip but found the 8K memory limiting when we wanted to address thousands of LEDs at once.
 
-<a href="https://www.pjrc.com/teensy/index.html"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-teensy.jpg"></a>
+<a href="https://www.pjrc.com/teensy/index.html"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-teensy.jpg"></a>
 
 The Teensy gives us plenty of head room and it was easy to get a <a href="https://github.com/samuelclay/grove/blob/master/firmware/sensor/Makefile">GCC-based Makefile deployment setup</a> so all we had to do was run one <code>make</code> command and the board was flashed and rebooted.
 
@@ -81,11 +81,11 @@ You can buy anemometers for hundreds of dollars but we made our own following th
 
 While out on the playa we discovered that the plastic trumpet, which is used to channel your breath toward the sensor while keeping out wind, would cover a bit too much of the proximity sensor. We solved this problem by adding ultrasonic sensors (thanks to Frys for letting us buy out their collection of ultrasonic sensors on the way to the burn), pictured below on top of the orange trumpet.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/IMG_9930.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/IMG_9930.jpg">
 
 We spent a couple days adding these ultrasonic sensors into the boards, soldering in the desert and making do with what we had. Thankfully we left a few pins open that we could then use for the new and improved proximity sensors.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/build-severin-soldering.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/build-severin-soldering.jpg">
 
 You can explore <a href="https://github.com/samuelclay/grove/blob/master/firmware/sensor/src/sensor.cpp">the code we used to sense your breath on Github</a>. There's a few parts that I'll highlight below in the <a href="#firmware">writing the firmware section</a>.
 
@@ -93,18 +93,18 @@ You can explore <a href="https://github.com/samuelclay/grove/blob/master/firmwar
 
 This is the board that talks to the sensor board and the dispatcher board and gets all of the LED strips plugged into it. This is where the main battery connects to the tree and where power is distributed to each of the sensors and LEDs. This board also communicates with the dispatcher board up top in the leaves to make the high current LEDs fade between colors.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-mainboard.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-mainboard.jpg">
 
 You'll notice on the left is an <a href="https://www.aliexpress.com/item/2016-Brand-New-1pcs-Step-down-Power-DC-DC-CC-CV-Buck-Converter-Supply-Module-7/32608517078.html">8A DC-to-DC step-down voltage regulator</a> that brought the 12V down to 5V needed for the LED strips and sensor board. The dispatcher board and its 16 high current LEDs needs the full 12V. We originally used a cheaper 3A voltage regulator, but it turns out that the number of LEDs we had on at any given time would regularly hit 5A, so we had to boost the voltage regulator.
 
-<a href="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-pcb-main.png"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-pcb-main.png"></a>
+<a href="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-pcb-main.png"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-pcb-main.png"></a>
 
 You should also note that we used a Teensy here as well. There are some protections built into the circuit to prevent burning out the Teensy if we happen to short somewhere. Thankfully this didn't happen, but we made the Teensy removable and replaceable in case it did.
 
 
 All of the wire-to-board connectors are <a href="https://www.digikey.com/catalog/en/partgroup/mta-100-series/2660">MTA100 Series female</a> and <a href="https://www.digikey.com/catalog/en/partgroup/mta-100-series/9332">male pin headers</a>. They are an inexpensive connector that you can crimp onto AWG 22 gauge wires and then easily insert into 0.1" male header pins. They even include an optional polarity wedge on the side so that you can ensure the wires are always plugged in the right direction, which is especially helpful when you have people helping you out and you want to ensure that no mistakes are even possible.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-crimp.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-crimp.jpg">
 
 Crimping the MTA100 headers to the wires is pretty fast. You can use either a <a href="http://www.newark.com/te-connectivity-amp/59803-1/insertion-tool/dp/98F2821">$30 insertion tool</a> or a <a href="https://www.digikey.com/product-detail/en/te-connectivity-amp-connectors/58074-1/A2031-ND/30197">$100 crimping tool</a> with a <a href="https://www.digikey.com/products/en?mpart=58246-1&v=17">$163 MTA100-specific crimping head</a>.
 
@@ -116,23 +116,23 @@ Sometimes the connections wouldn't take and they would have to be re-crimped. Th
 
 That brings us to the dispatcher board on top. The goal is to have 16 individual 3W ultra-bright LEDs on top of the tree light up as each breath climbs to the top of the tree. These high current LEDs look like they are effectively breathing, turning your breath into the breath of an entire tree. It's a magical effect and to pull it off we're going to need a custom board just to handle these tricky LEDs.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/prototyping-leds.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/prototyping-leds.jpg">
 
 Last time with Pulse &amp; Bloom we didn't have a dispatcher board, instead relying on driving the LEDs with loose wires connected directly to PicoBucks. It was a mess. Here's the wiring diagram just for the 9 high current LEDs.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Petal%20LEDs%20wiring.png">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20Petal%20LEDs%20wiring.png">
 
 This means that there are over a hundred wires (6 per LED) per tree.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20wired%20picobuck.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Pulse%20%26%20Bloom%20-%20wired%20picobuck.jpg">
 
 We decided instead to make a board that not only could handle all of this wiring mess but also allow us to easily change out the PicoBucks if they shorted, which is something that happened surprisingly often until we realized that the factory solder jobs on the LEDs themselves could sometimes short.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/prototyping-dispatcher.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/prototyping-dispatcher.jpg">
 
 You can see from the schematic below that we simplified the setup by hooking up a set of four high current LEDs per PicoBuck. This let us individually address four sets of lights, giving the tree a mesmerizing pattern of lights that would slowly breathe on their own in green, turning blue when filled with "oxygen" from somebody sitting down and breathing into the breathing sensor at the base of the tree.
 
-<a href="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-pcb-dispatcher.png"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-pcb-dispatcher.png"></a>
+<a href="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-pcb-dispatcher.png"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-pcb-dispatcher.png"></a>
 
 We also added protection fuses to the dispatcher board in case the LEDs did short. Since each LED draws a quarter amp at 12 V, we needed to make sure that they would be protected. 
 
@@ -356,7 +356,7 @@ The other option is to use a generator, but while relatively cheap, they are lou
 
 Let's take a look at what's on the market.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-batteries.png" style="border: none">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-batteries.png" style="border: none">
 
 Most batteries cost around 20 cents per Watt-hour. Let's perform some calculations to figure out how much we need. Let's look at a single tree. Most of the time a tree is going to be in a "rest" state, where nobody is actively using it. This means the tree is draped in green and the high current LEDs are in a lower power state. 
 
@@ -373,7 +373,7 @@ At 10 trees, that's 470 watts of power. We expect the installation to run 10 hou
 
 What we did was put 3 6V 250 Ah batteries in series to boost it up to 18V instead of just using 2 6V batteries at 12V. We did this to limit the DC voltage drop between the battery array and the trees, each of which was between 10 and 20 meters away from the battery array. Since voltage drop is linear with respect to distance, the reduction from 18V to ~15V is a 16% drop but 12V to ~9V is a 25% drop. This prevents the high current LEDs from flickering, since they need a minimum of 10V to work.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/build-solar-array.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/build-solar-array.jpg">
 
 We charged the batteries using Luke's solar array that he just happened to have handy. Here's Luke on the challenges we faced:
 
@@ -385,44 +385,44 @@ We charged the batteries using Luke's solar array that he just happened to have 
 
 Before the trees go up we need to assemble them and give them a coat of spray paint. These trees are shaped steel tubes that need some gold applied.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/oakland-trees.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/oakland-trees.jpg">
 
 All of the work is done at American Steel Studios in Oakland, California. We want to do as much work as possible before we get to the playa. Once we're in the desert, anything we may need is going to be 6 hours round trip to Reno, whereas the Home Depot in Oakland is a 5 minute drive away.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/build-electronics-behind.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/build-electronics-behind.jpg">
 
 Alas, as much as we try to avoid it, there's plenty of firmware debugging to be done on the playa.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/build-severin-heather.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/build-severin-heather.jpg">
 
 Naturally, firmware debugging often lasted well into the night.
 
 Putting the trees up is also a ton of work. We prototyped the leaves at a small scale.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-petals-small.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-petals-small.jpg">
 
 But once on the playa we realize it's a lot more work to attach 16 individual leaves to each of the 10 trees simply as a matter of scale.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-leaf.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-leaf.jpg">
 
 The trees go up a lot faster than individual subassemblies on the tree. This is a good photo of the Pareto principle for art installations. Putting up the first 80% of the installation by volume only took 20% of the time.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/build-trees.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/build-trees.jpg">
 
 <h2>Enjoying the fruits of our labor</h2>
 
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-breathing-couple.jpg">
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-breathing-daytime.jpg">
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-brittany-breathing-2.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-breathing-couple.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-breathing-daytime.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-brittany-breathing-2.jpg">
 
 It's dusty out there!
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/teardown-tornado.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/teardown-tornado.jpg">
 
 And as we did with Pulse &amp; Bloom, these cushions are some of the only seating on the playa, offering a beautiful respite and place to recharge and re-energize from the heat of the playa.
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/grove/grove-party-dusty.jpg">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/grove/grove-party-dusty.jpg">
 
 The entire process lasted 3 months and involved 5 people on the electronics team, a half dozen people on fabrication, and another dozen people on assembly and installation. My hope is that others learn from our work and use some of the <a href="https://github.com/samuelclay/grove/">open-source firmware and designs</a> for their own art installations. 
 

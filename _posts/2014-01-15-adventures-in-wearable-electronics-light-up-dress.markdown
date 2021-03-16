@@ -9,16 +9,16 @@ redirect_from:
 <table>
     <tr>
         <td>
-            <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Hoolahoop%202.gif" width="130" height="230">
+            <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Hoolahoop%202.gif" width="130" height="230">
         </td>
         <td>
-            <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Sparkles.gif" width="130" height="230">
+            <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Sparkles.gif" width="130" height="230">
         </td>
         <td>
-            <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Raindrops.gif" width="130" height="230">
+            <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Raindrops.gif" width="130" height="230">
         </td>
         <td>
-            <img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Spiral.gif" width="130" height="230">
+            <img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Spiral.gif" width="130" height="230">
         </td>
     </tr>
 </table>
@@ -34,13 +34,13 @@ The [full source code for this dress](https://gist.github.com/samuelclay/8276775
 <table>
     <tr>
         <td>
-            <a href="http://www.adafruit.com/products/659"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/flora.jpg" width="200" height="149" class="OB-hardware"></a>
+            <a href="http://www.adafruit.com/products/659"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/flora.jpg" width="200" height="149" class="OB-hardware"></a>
         </td>
         <td>
-            <a href="https://www.sparkfun.com/products/12025"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/ledstrip.jpg" width="200" height="149" class="OB-hardware"></a>
+            <a href="https://www.sparkfun.com/products/12025"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/ledstrip.jpg" width="200" height="149" class="OB-hardware"></a>
         </td>
         <td>
-            <a href="http://www.adafruit.com/products/727?gclid=CMGI5d3C6LsCFZKGfgod50gASw"><img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/batteries.jpg" width="200" height="149" class="OB-hardware"></a>
+            <a href="http://www.adafruit.com/products/727?gclid=CMGI5d3C6LsCFZKGfgod50gASw"><img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/batteries.jpg" width="200" height="149" class="OB-hardware"></a>
         </td>
     </tr>
 </table>
@@ -94,7 +94,7 @@ By giving a random delay to each routine I am actually changing the speed of the
 
 ## Hula hoop
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Hoolahoop%202.gif" width="228" height="405" class="OB-full">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Hoolahoop%202.gif" width="228" height="405" class="OB-full">
 
 For the hula hoop routine, I chose to use cylons at equal positions that move up and down the strand. To make the transition from one LED to the next, I use a cylon, which is a fancy way of saying that the LEDs immediately above and below the active LED are also on, but at a reduced brightness. 
 
@@ -198,7 +198,7 @@ void hulahoop(unsigned long color, byte wait) {
 
 ## Sparkles
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Sparkles.gif" width="228" height="405" class="OB-full">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Sparkles.gif" width="228" height="405" class="OB-full">
 
 This is by far the easiest routine to program yet the one that brought the most attention. It simply flashes a random LED across all of the LED strips.
 
@@ -241,7 +241,7 @@ void sparkle(unsigned long color, uint8_t wait) {
 
 ## Raindrops
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Raindrops.gif" width="228" height="405" class="OB-full">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Raindrops.gif" width="228" height="405" class="OB-full">
 
 This is by far the most difficult of the routines. This one sends down cylons (5 LEDs, with the center LED being the brightest and the adjacent LEDs becoming decreasingly bright, so as to give the impression of smoother animation). 
 
@@ -352,7 +352,7 @@ void raindrops(unsigned long color, byte wait) {
 
 ## Spiral
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Spiral.gif" width="228" height="405" class="OB-full">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Spiral.gif" width="228" height="405" class="OB-full">
 
 This routine is better in theory than in practice. The idea is to have a quick succession of LEDs light up in a spiral pattern. This would work a bit better with more LED strands wrapped around the dress.
 
@@ -452,7 +452,7 @@ unsigned long randomColor() {
 
 ## Dancing to 2014
 
-<img src="http://static.newsblur.com.s3.amazonaws.com/ofbrooklyn/Blue%20EL%20Jacket.jpg" height="405" width="279" class="OB-full">
+<img src="https://s3.amazonaws.com/static.newsblur.com/ofbrooklyn/Blue%20EL%20Jacket.jpg" height="405" width="279" class="OB-full">
 
 And what good is a beautiful light-up dress without a well lit dance partner? Here I am decked out in blue EL wire. I spent the better part of three hours sewing this wire into the edges of one of my jackets. But while hand-sewing can take half a day, the result is a great fit and a capable match for Brittany's dress.
 
