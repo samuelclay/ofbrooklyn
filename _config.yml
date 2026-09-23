@@ -35,4 +35,7 @@ plugins:
 
 whitelist:
   - jekyll-redirect-from
-  
+
+# Keep announcement source recordings and editing tools off the public site.
+exclude:
+  - tools/crabigator-media
